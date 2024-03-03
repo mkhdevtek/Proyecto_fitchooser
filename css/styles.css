@@ -1,0 +1,154 @@
+:root {
+  --lasuli: #416788;
+  --erieblack: #1e1e1e;
+  --isabelline: #f5fdee;
+  --isabelline_alpha: #f5fdeea4;
+  --red: #fd9696;
+  --gray: rgba(217, 217, 217, 0.37);
+}
+
+html {
+  background: var(--isabelline);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--isabelline);
+}
+
+header {
+  background: var(--lasuli);
+  color: var(--isabelline);
+  /* padding: 1em 0; */
+  text-align: center;
+  border-radius: 0 0 30px 30px;
+  height: 20vh;
+}
+
+header h1,
+h2 {
+  margin: 0;
+}
+
+header h1 {
+  font-size: 5vw;
+  font-family: "Imperial Script", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+header h2 {
+  font-size: 1.5em;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background: var(--erieblack);
+  margin-top: 1em;
+  padding: 2em;
+  width: 40%;
+  height: 70%;
+  border-radius: 30px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 80%;
+  height: 40px;
+  padding: 0.5em;
+  border: none;
+  border-radius: 40px;
+  background: var(--gray);
+  margin: 10px 0;
+  color: var(--isabelline);
+  font-size: 16pt;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  padding-left: 40px;
+}
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: var(--isabelline_alpha);
+  font-size: 16pt;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  padding-left: 10px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus::placeholder,
+input[type="password"]:focus::placeholder {
+  transform: translate(-20px, -50px);
+  font-size: 16pt;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  padding-left: 40px;
+}
+
+input[type="submit"] {
+  width: 45%;
+  height: 50px;
+  padding: 0.5em;
+  border: none;
+  border-radius: 40px;
+  background: var(--red);
+  margin: 10px 0;
+  color: var(--isabelline);
+  font-size: 16pt;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: #ff7f7f;
+}
+
+input[type="submit"]:active {
+  background: #ff4f4f;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+}
+
+a {
+  color: var(--isabelline);
+  font-size: 16pt;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--red);
+}
+
+footer {
+  background: var(--lasuli);
+  color: var(--isabelline);
+  padding: 1% 0;
+  text-align: center;
+  margin-top: 1em;
+  border-radius: 30px 30px 0 0;
+  height: 13vh;
+}
