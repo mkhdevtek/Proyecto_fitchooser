@@ -1,0 +1,181 @@
+:root {
+  --lasuli: #416788;
+  --erieblack: #1e1e1e;
+  --erieblack_alpha:rgba(30, 30, 30, 0.544)e;
+  --isabelline: #f5fdee;
+  --isabelline_alpha: #f5fdeea4;
+  --red: #fd9696;
+  --gray: rgba(217, 217, 217, 0.37);
+}
+
+html {
+  background: var(--isabelline);
+  color: var(--isabelline);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--isabelline);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: var(--lasuli);
+  color: var(--isabelline);
+  border-radius: 0 0 30px 30px;
+  height: 20vw;
+}
+
+header img{
+  --size: 10%;
+  width: var(--size);
+  height: var(--size);
+  margin: 1em 0;
+  object-fit: cover;
+}
+
+header a h1{
+  font-family: "Imperial Script", cursive;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  color: var(--isabelline);
+  font-size: 60pt;
+}
+header a h1:hover{
+  cursor: pointer;
+}
+
+header h2 {
+  font-size: 1.5em;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: -55px;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  color: var(--erieblack) ;
+}
+
+section article {
+  --height: 55vh;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 85%;
+  height: var(--height);
+  background-color: var(--gray);
+}
+
+section article div {
+  --width:22%;
+  --height: 79%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--erieblack);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+section article div:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 30px -10px var(--erieblack);
+  cursor: pointer;
+}
+
+section article div img{
+  width: 87%;
+  height: 70%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+section article div h3 {
+  font-size: 1.5em;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--isabelline);
+  margin: 0.5em 0;
+  width: 100%;
+  text-align: center;
+}
+
+section ul {
+  --width: 60%;
+  --height: 40vh;
+
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  list-style: none;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center ;
+  align-content: space-around;
+  padding: 0 20px;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--red);
+  border-radius: calc(var(--height) / 2);
+  box-shadow: 0 0 30px -10px var(--erieblack);
+  transition: all 0.2s ease;
+}
+section ul:hover{
+  transform: scale(1.01);
+}
+
+section ul li {
+  --size:75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--isabelline);
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--isabelline);
+  border-radius: calc(var(--height) / 2);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px -10px rgba(50,50,50, 0.2) inset;
+}
+section ul li:hover{
+  background-color: var(--lasuli);
+  color: var(--isabelline);
+  cursor: pointer;
+  color: var(--isabelline);
+  transform: scale(1.1);
+}
+
+section ul li a {
+  text-decoration: none;
+  color: var(--erieblack);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background: var(--lasuli);
+  color: var(--isabelline);
+  border-radius: 30px 30px 0 0;
+}
