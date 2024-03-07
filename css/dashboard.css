@@ -2,7 +2,7 @@
   --lasuli: #416788;
   --erieblack: #1e1e1e;
   --erieblack_alpha:rgba(30, 30, 30, 0.544)e;
-  --isabelline: #f5fdee;
+  --isabelline: #F5F0EE;
   --isabelline_alpha: #f5fdeea4;
   --red: #fd9696;
   --gray: rgba(217, 217, 217, 0.37);
@@ -31,27 +31,44 @@ header {
   background: var(--lasuli);
   color: var(--isabelline);
   border-radius: 0 0 30px 30px;
-  height: 20vw;
+  height: 20vh;
 }
 
-header img{
-  --size: 10%;
-  width: var(--size);
-  height: var(--size);
-  margin: 1em 0;
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  height: 95%;
+  transition: all 0.3s ease;
+}
+
+.logo:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.logo img{
+  --width: 20%;
+  --height: 80%;
+  width: var(--width);
+  height: var(--height);
+  margin-top: -2em;
   object-fit: cover;
+  padding: 0 10px;
 }
 
-header a h1{
+.logo h1{
   font-family: "Imperial Script", cursive;
   font-weight: 500;
   font-style: normal;
   text-decoration: none;
   color: var(--isabelline);
   font-size: 60pt;
-}
-header a h1:hover{
-  cursor: pointer;
+  margin-top: 30px;
+  padding: 0 30px;
 }
 
 header h2 {
@@ -64,9 +81,10 @@ header h2 {
 
 section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 70vh;
+  width: 100%;
   color: var(--erieblack) ;
 }
 
@@ -79,16 +97,15 @@ section article {
   justify-content: space-evenly;
   width: 85%;
   height: var(--height);
-  background-color: var(--gray);
 }
 
 section article div {
   --width:22%;
-  --height: 79%;
+  --height: 90%;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: var(--width);
   height: var(--height);
@@ -104,10 +121,18 @@ section article div:hover{
 
 section article div img{
   width: 87%;
-  height: 70%;
-  border-radius: 20px;
+  height: 80%;
+  border-radius: 10px;
   object-fit: cover;
+  margin: 0.9em 0 0 0;
+  transition: all 0.3s ease;
 }
+/* section article div img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  border-radius: 3px;
+  box-shadow: 0 0 50px -10px var(--erieblack);
+} */
 
 section article div h3 {
   font-size: 1.5em;
@@ -115,20 +140,19 @@ section article div h3 {
   font-weight: 400;
   font-style: normal;
   color: var(--isabelline);
-  margin: 0.5em 0;
+  margin: 0 0 0.5em 0;
   width: 100%;
   text-align: center;
 }
 
 section ul {
-  --width: 60%;
+  --width: 50%;
   --height: 40vh;
 
   display: flex;
   flex-direction: column;
   align-content: space-around;
   list-style: none;
-  flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center ;
   align-content: space-around;
@@ -137,10 +161,10 @@ section ul {
   height: var(--height);
   background-color: var(--red);
   border-radius: calc(var(--height) / 2);
-  box-shadow: 0 0 30px -10px var(--erieblack);
   transition: all 0.2s ease;
 }
 section ul:hover{
+  box-shadow: 0 0 20px -10px var(--erieblack);
   transform: scale(1.01);
 }
 
@@ -164,10 +188,72 @@ section ul li:hover{
   color: var(--isabelline);
   transform: scale(1.1);
 }
+.icon {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  padding: 18px 18px;
+}
+.gen{
+  background-image: url("/img/generate_black.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 36px;
+}
+.gen:hover{
+  background-image: url("/img/generate_white.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 36px;
+}
+
+.user{
+  background-image: url("/img/user_black.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 36px;
+}
+.user:hover{
+  background-image: url("/img/user_white.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 36px;
+}
 
 section ul li a {
   text-decoration: none;
   color: var(--erieblack);
+}
+
+.filter{
+  position: absolute;
+  right: 50px;
+  width:  90px;
+  height: 90px;
+  background-color: var(--red);
+  border-radius: 50%;
+  margin: 1em;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.filter:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px -10px var(--erieblack);
+}
+
+.filter h3{
+  font-size: 1.5em;
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--isabelline);
+  margin: 0 0 0.5em 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
 
 footer {

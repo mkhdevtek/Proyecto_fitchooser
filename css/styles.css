@@ -1,7 +1,7 @@
 :root {
   --lasuli: #416788;
   --erieblack: #1e1e1e;
-  --isabelline: #f5fdee;
+  --isabelline: #F5F0EE;
   --isabelline_alpha: #f5fdeea4;
   --red: #fd9696;
   --gray: rgba(217, 217, 217, 0.37);
@@ -9,6 +9,7 @@
 
 html {
   background: var(--isabelline);
+  scroll-behavior: none;
 }
 
 body {
@@ -18,26 +19,54 @@ body {
   box-sizing: border-box;
   color: var(--isabelline);
 }
-
 header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   background: var(--lasuli);
   color: var(--isabelline);
-  text-align: center;
   border-radius: 0 0 30px 30px;
-  height: 14vw;
-  width: 100%;
+  height: 20vh;
 }
 
-header h1,
-h2 {
-  margin: 0;
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  height: 95%;
+  transition: all 0.3s ease;
 }
 
-header h1 {
-  font-size: 5vw;
+.logo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.logo img {
+  --width: 20%;
+  --height: 80%;
+  width: var(--width);
+  height: var(--height);
+  /* margin-top: -2em; */
+  object-fit: cover;
+  padding: 0 10px;
+}
+
+.logo h1 {
   font-family: "Imperial Script", cursive;
   font-weight: 500;
   font-style: normal;
+  text-decoration: none;
+  color: var(--isabelline);
+  font-size: 60pt;
+  margin-top: 30px;
+  padding: 0 30px;
 }
 
 header h2 {
@@ -45,52 +74,52 @@ header h2 {
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
   font-style: normal;
+  margin-top: -55px;
 }
-
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
+  height: 65vh;
+  width: 100%;
+  color: var(--isabelline);
 }
 
-form {
+.login form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
   background: var(--erieblack);
-  margin-top: 1em;
-  padding: 2em;
+  padding: 3em;
+  height: auto;
   width: 40%;
-  height: 70%;
   border-radius: 30px;
 }
 
 input[type="text"],
 input[type="password"] {
   width: 80%;
-  height: 40px;
-  padding: 0.5em;
-  border: none;
+  height:70px;
   border-radius: 40px;
+  border: none;
+  margin: 10px auto;
   background: var(--gray);
-  margin: 10px 0;
   color: var(--isabelline);
   font-size: 16pt;
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
-  padding-left: 40px;
+  padding: 0 30px;
 }
 
 input[type="text"]::placeholder,
 input[type="password"]::placeholder {
   color: var(--isabelline_alpha);
-  font-size: 16pt;
+  font-size: 18pt;
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
-  padding-left: 10px;
+  padding-left: 43px;
   transition: all 0.3s ease;
 }
 
@@ -101,6 +130,20 @@ input[type="password"]:focus::placeholder {
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
   padding-left: 40px;
+}
+
+.usr-icon::placeholder {
+  background-image: url("/img/user.png");
+  background-repeat: no-repeat;
+  background-position: 2% 50%;
+  background-size: 20px;
+}
+
+.pass-icon::placeholder {
+  background-image: url("/img/pass.png");
+  background-repeat: no-repeat;
+  background-position: 2% 50%;
+  background-size: 30px;
 }
 
 input[type="submit"] {
@@ -116,10 +159,12 @@ input[type="submit"] {
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 input[type="submit"]:hover {
   background: #ff7f7f;
+  transform: scale(1.04);
 }
 
 input[type="submit"]:active {
@@ -147,10 +192,11 @@ a:hover {
 footer {
   background: var(--lasuli);
   color: var(--isabelline);
-  /* padding: 1% 0; */
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 14.8vh;
   border-radius: 30px 30px 0 0;
-  height: 10vw;
 }
 
 footer p{
