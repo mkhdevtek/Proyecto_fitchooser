@@ -11,6 +11,8 @@
 html {
   background: var(--isabelline);
   color: var(--isabelline);
+  /* filter: blur(5px);
+  backdrop-filter: blur(5px) hue-rotate(180deg); */
 }
 
 body {
@@ -116,7 +118,7 @@ section article div {
 section article div:hover{
   transform: scale(1.03);
   box-shadow: 0 0 30px -10px var(--erieblack);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 section article div img{
@@ -206,6 +208,19 @@ section ul li:hover{
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
+}
+
+.add {
+  background-image: url("/img/add_black.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 40px;
+}
+.add:hover{
+  background-image: url("/img/add_white.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 40px;
 }
 
 .user{

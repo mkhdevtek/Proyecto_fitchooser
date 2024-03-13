@@ -90,9 +90,8 @@ header h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
   background: var(--erieblack);
-  padding: 3em;
+  padding: 2em;
   height: auto;
   width: 40%;
   border-radius: 30px;
@@ -101,7 +100,7 @@ header h2 {
 input[type="text"],
 input[type="password"] {
   width: 80%;
-  height:70px;
+  height:50px;
   border-radius: 40px;
   border: none;
   margin: 10px auto;
@@ -201,4 +200,42 @@ footer {
 
 footer p{
   padding: 4% 0;
+}
+
+@media (max-width: 810px) {
+  header {
+    height: 20vh;
+  }
+  .logo h1 {
+    font-size: 40pt;
+  }
+  header h2 {
+    font-size: 1.2em;
+    margin-top: -40px;
+  }
+  .login {
+    width: auto;
+    height: 70vh;
+  }
+  .login form {
+    width: 40%;
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 80%;
+  }
+  input[type="submit"] {
+    width: 50%;
+  }
+
+  a{
+    font-size: 14pt;
+  }
+  footer {
+    height: 10vh;
+  }
+  footer p{
+    padding: 2% 0;
+  }
+  
 }
