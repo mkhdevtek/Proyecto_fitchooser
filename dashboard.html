@@ -26,7 +26,30 @@
     </header>
 
     <div class="filter">
-      <h3>Filtra</h3>
+      <a href="#popup-filter"><h3>Filtra</h3> </a>
+    </div>
+
+    <div id="popup-filter" class="modal">
+      <div class="popup-inner">
+        <h2>Selecciona tu estilo</h2>
+        <form action="dashboard.html">
+          <input type="checkbox" name="hoddies" id="hoddies" />
+          <label for="hoddies">Modo Guerra</label>
+          <input type="checkbox" name="camisas" id="camisas" />
+          <label for="camisas">Modo Setso</label>
+          <input type="checkbox" name="pantalon" id="pantalon" />
+          <label for="pantalon">Modo Agresivo</label>
+          <input type="checkbox" name="gorra" id="gorra" />
+          <label for="gorra">Modo Muerte</label>
+          <input
+            type="submit"
+            name="filter-button"
+            id="filter-button"
+            value="Filtrar"
+          />
+        </form>
+        <a href="#" class="close">X</a>
+      </div>
     </div>
 
     <section>
@@ -35,7 +58,7 @@
           <li>
             <a href="#" class="icon gen"></a>
           </li>
-          <li><a href="#" class="icon add"></a></li>
+          <li><a href="#popup-filter" class="icon add"></a></li>
           <li>
             <a href="profile.html" class="icon user"></a>
           </li>

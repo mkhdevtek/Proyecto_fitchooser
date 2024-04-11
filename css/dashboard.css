@@ -1,7 +1,7 @@
 :root {
   --lasuli: #416788;
   --erieblack: #1e1e1e;
-  --erieblack_alpha:rgba(30, 30, 30, 0.544)e;
+  --erieblack_alpha:rgba(30, 30, 30, 0.45);
   --isabelline: #F5F0EE;
   --isabelline_alpha: #f5fdeea4;
   --red: #fd9696;
@@ -188,7 +188,7 @@ section ul li:hover{
   color: var(--isabelline);
   cursor: pointer;
   color: var(--isabelline);
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(360deg);
 }
 .icon {
   width: 50%;
@@ -269,6 +269,28 @@ section ul li a {
   width: 100%;
   text-align: center;
   margin-top: 30px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: var(--erieblack_alpha);
+  backdrop-filter: blur(10px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.popup-inner {
+  position: relative;
+  background: var(--erieblack);
+  padding: 1em 2em;
+  border-radius:40px;
+  height: 70dvh;
+}
+
+.modal:target {
+  display: flex;
 }
 
 footer {
