@@ -58,7 +58,7 @@
           <li>
             <a href="#" class="icon gen"></a>
           </li>
-          <li><a href="#popup-filter" class="icon add"></a></li>
+          <li><a href="#popup-upload" class="icon add"></a></li>
           <li>
             <a href="profile.html" class="icon user"></a>
           </li>
@@ -83,6 +83,16 @@
         </div>
       </article>
     </section>
+    <div id="popup-upload" class="modal">
+      <div class="popup-inner">
+        <h2>Upload your images</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <input type="file" name="files" id="file-upload" multiple="multiple">
+          <label for="file-upload" class="upload-files-button">Upload Files</label>
+          <a href="#" class="close">X</a>
+        </form>
+      </div>
+    </div>
     <footer>
       <p>Fit Chooser 2021 ©</p>
     </footer>
