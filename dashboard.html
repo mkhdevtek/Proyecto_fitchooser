@@ -83,14 +83,20 @@
         </div>
       </article>
     </section>
+    <!-- Popup Upload Modal -->
     <div id="popup-upload" class="modal">
-      <div class="popup-inner">
-        <h2>Upload your images</h2>
-        <form action="/upload" method="post" enctype="multipart/form-data">
-          <input type="file" name="files" id="file-upload" multiple="multiple">
-          <label for="file-upload" class="upload-files-button">Upload Files</label>
-          <a href="#" class="close">X</a>
-        </form>
+      <div class="popup-inner upload-modal-content">
+        <a href="#" class="close-button">X</a>
+        <div class="upload-icon">
+          <img src="/img/logo.png" alt="Upload Icon" />
+        </div>
+        <div class="upload-instructions">
+          <p>Upload multiple images with the button or just drag’n drop</p>
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="files" id="file-upload" multiple="multiple" class="upload-input">
+            <label for="file-upload" class="upload-button">Upload Files</label>
+          </form>
+        </div>
       </div>
     </div>
     <footer>
