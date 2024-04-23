@@ -29,7 +29,7 @@ header {
   background: var(--lasuli);
   color: var(--isabelline);
   border-radius: 0 0 30px 30px;
-  height: 20vh;
+  height: 20dvh;
 }
 
 .logo {
@@ -80,9 +80,9 @@ header h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65vh;
+  height: 70dvh;
   width: 100%;
-  color: var(--isabelline);
+  background-color: var(--isabelline);
 }
 
 .login form {
@@ -91,15 +91,14 @@ header h2 {
   justify-content: center;
   align-items: center;
   background: var(--erieblack);
-  padding: 2em;
-  height: auto;
-  width: 40%;
+  height: 80%;
+  width: 50%;
   border-radius: 30px;
 }
 
 input[type="text"],
 input[type="password"] {
-  width: 80%;
+  width: 70%;
   height:50px;
   border-radius: 40px;
   border: none;
@@ -110,6 +109,7 @@ input[type="password"] {
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
   padding: 0 30px;
+  margin: 30px 0;
 }
 
 input[type="text"]::placeholder,
@@ -152,7 +152,7 @@ input[type="submit"] {
   border: none;
   border-radius: 40px;
   background: var(--red);
-  margin: 10px 0;
+  margin: 20px 0;
   color: var(--isabelline);
   font-size: 16pt;
   font-family: "IM Fell English SC", serif;
@@ -194,7 +194,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 14.8vh;
+  height: 10dvh;
   border-radius: 30px 30px 0 0;
 }
 
@@ -209,20 +209,25 @@ footer p{
   .logo h1 {
     font-size: 40pt;
   }
+  .logo img{
+    width: 25%;
+    height: 70%;
+  } 
   header h2 {
     font-size: 1.2em;
     margin-top: -40px;
   }
   .login {
-    width: auto;
+    width: 100%;
     height: 70vh;
   }
   .login form {
-    width: 40%;
+    width: 60%;
+    /* padding: 30px; */
   }
   input[type="text"],
   input[type="password"] {
-    width: 80%;
+    width: 70%;
   }
   input[type="submit"] {
     width: 50%;
