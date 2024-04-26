@@ -85,9 +85,13 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 70dvh;
   width: 100%;
   color: var(--erieblack) ;
+}
+
+section nav ul{
+  margin: 0 auto;
 }
 
 section article {
@@ -289,19 +293,50 @@ section ul li a {
   height: 70dvh;
 }
 
+.popup-form{
+  margin: 50px auto 0 auto;
+  width: 90%;
+  height: 70%;
+}
+
 .modal:target {
   display: flex;
+}
+
+.close{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width:  40px;
+  height: 40px;
+  background-color: var(--red);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--isabelline);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+
+.close:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px -10px var(--erieblack);
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
+  height: 10dvh;
   background: var(--lasuli);
   color: var(--isabelline);
   border-radius: 30px 30px 0 0;
 }
+<<<<<<< HEAD
 /* CSS DE FER */
 .upload-section {
   display: flex;
@@ -621,3 +656,19 @@ footer {
   margin-bottom: 0; /* Asegúrate de que no haya margen extra empujando el botón hacia arriba */
 }
 
+=======
+
+@media (max-width: 1000px) {
+  section{
+    height: 200%;
+    margin: 20px 10px;
+  }
+  article{
+    flex-wrap: wrap ;
+  }
+  .card{
+    width: 45%;
+    margin: 0.5em 0;
+  }
+}
+>>>>>>> cb42f58ab83178c8e8094731717589fb2b6fab74
