@@ -7,20 +7,12 @@
   --red: #fd9696;
   --gray: rgba(217, 217, 217, 0.37);
 }
-
-html {
-  background: var(--isabelline);
-  color: var(--isabelline);
+html{
+  background-color: var(--isabelline);
 }
-
-body {
-  font-family: "Roboto", sans-serif;
+body{
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: var(--isabelline);
 }
-
 header {
   display: flex;
   flex-direction: column;
@@ -33,8 +25,7 @@ header {
   border-radius: 0 0 30px 30px;
   height: 20vh;
 }
-
-.logo {
+.logo{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,13 +35,11 @@ header {
   height: 95%;
   transition: all 0.3s ease;
 }
-
-.logo:hover {
+.logo:hover{
   cursor: pointer;
   transform: scale(1.1);
 }
-
-.logo img {
+.logo img{
   --width: 20%;
   --height: 80%;
   width: var(--width);
@@ -59,8 +48,7 @@ header {
   object-fit: cover;
   padding: 0 10px;
 }
-
-.logo h1 {
+.logo h1{
   font-family: "Imperial Script", cursive;
   font-weight: 500;
   font-style: normal;
@@ -70,7 +58,6 @@ header {
   margin-top: 30px;
   padding: 0 30px;
 }
-
 header h2 {
   font-size: 1.5em;
   font-family: "IM Fell English SC", serif;
@@ -78,65 +65,137 @@ header h2 {
   font-style: normal;
   margin-top: -55px;
 }
-
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  width: 100%;
-  color: var(--erieblack);
-}
-
-.profile {
+/* empieza la parte de datos del perfil*/
+.perfil{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly ;
-  align-items: center;
-  height: 100px;
-  width: 100%;
-  color: var(--erieblack);
-  margin: 20px auto;
-  padding-bottom: 20px;
-  border-bottom: 2px solid var(--lasuli);
+  margin-top: 50px;
+  margin-left: 162px;
 }
+.perfil img{
+  height: 150px;
+  width: 125px;
 
-.profile-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  width: 100px;
-  border-radius: 30%;
-  background: var(--isabelline);
-  box-shadow: 0 0 50px -20px var(--erieblack);
 }
-
-.profile-img img {
-  width: auto;
-  height: 100%;
-  border-radius: 30%;
-  object-fit: cover;
+.perfil a{
+  margin-top: 20px;
+  font-size: 1.2em;
+  margin-left: 40px;
+  text-decoration: none;
 }
-
-.profile-info {
+.datos{
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: start;
-  flex-wrap: wrap;
-  height: 100%;
-  width: 50%;
-  color: var(--erieblack);
+  margin-left: 150px;
 }
-
-a{
-  text-decoration: none;
-  color: var(--erieblack);
+.foto{
+  margin-left: 25px;
+  display: flex;
+  background-color: var(--gray); 
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
+#editar{
+  font-size: 1.2em;
+  margin: 40px;
+  margin-left: 43%;
+  background-color: var(--red);
+  color: black;
+  border: none;
+  height: 50px;
+  width: 200px;
+  border-radius: 35px;
+}
+#editar:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+label{
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+/*empieza seccion de prendas agregadas */  
+.botones{
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.botones button{
+  height: 70px;
+  width: 70px;
+  background-color: var(--red);
+  border: none;
+  border-radius: 50px;
+}
+.botones button:hover{
+  cursor: pointer;
+  background-color: var(--red);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+.botones h2{
+  font-size: 2.5em;
+}
+.botones #add{
+  background-image: url("/img/add_black.png");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.botones #delete{
+  background-image: url("/img/basura.png");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.prendas{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.card{
+  margin-top: 50px;
+  width: 300px;
+  height: 400px;
+  background-color:black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  justify-content: center;
+  border-radius: 25px;
+}
+.card:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 30px -10px var(--erieblack);
+  transition: all 0.3s ease;
+}
+.prendas .card img{
+  margin-top: 60px;
+  margin-left: 18px;
+  height: 270px;
+  width: 260px;
+  border-radius: 25px;
 
-
+}
+.card h3{
+  color: white;
+  text-align: center;
+  margin-bottom: 70px;
+  font-size: 2em;
+  font-family: "IM Fell English SC", serif;
+  color: var(--isabelline);
+} 
 footer {
   display: flex;
   justify-content: center;
