@@ -336,6 +336,327 @@ footer {
   color: var(--isabelline);
   border-radius: 30px 30px 0 0;
 }
+<<<<<<< HEAD
+/* CSS DE FER */
+.upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+
+}
+
+.upload-box {
+  width: 60%;
+  background: var(--erieblack);
+  border-radius: 20px;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.upload-box:hover {
+  transform: translateY(-5px);
+}
+
+.upload-desc p {
+  color: var(--isabelline);
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  background-color: var(--red);
+  color: var(--isabelline);
+  padding: 1em 2em;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-label:hover {
+  background-color: var(--gray);
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.upload-modal-content {
+  position: relative;
+  background: var(--isabelline);
+  border-radius: 20px;
+  width: 50%;
+  max-width: 600px;
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "IM Fell English SC", serif;
+}
+
+.upload-area {
+  margin-top: 4em;
+}
+
+
+.upload-instructions {
+  padding-top: 4em;
+}
+
+.close-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.upload-icon {
+  position: absolute;
+  top: 0em;
+  left: 0em;
+}
+
+.upload-icon img {
+
+  width: 120px;
+  height: auto;
+}
+
+
+.upload-instructions p {
+  color: var(--erieblack);
+  font-family: "IM Fell English SC", serif;
+  margin-bottom: 1em;
+}
+
+.upload-button {
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 1em 2em;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: var(--gray);
+}
+
+.upload-input {
+  display: none;
+}
+
+
+
+/*ESTILOS DE Recuadro punteado para arrastrar las imágenes*/
+.upload-area {
+  border: 2px dashed #ccc; /* Recuadro punteado */
+  border-radius: 20px;
+  padding: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.upload-button {
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 1em 2em;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Asegúrate de que el botón no esté oculto */
+  margin-top: 1em; /* Espacio por encima del botón */
+}
+
+
+
+/*ESTILOS DE Modal para los detalles de la prenda subida*/
+/* Centro el título */
+.details-modal-content h2 {
+  text-align: center; /* Alineación al centro del título */
+  font-family: "IM Fell English SC", serif;
+  font-size: 2em;
+  color: black;
+}
+
+.details-modal-content{
+  background: var(--isabelline);
+}
+
+/* Configuración de contenedor principal para flexbox */
+.form-field {
+  display: flex; /* Usa flexbox para crear un diseño de columnas */
+  margin: 0.5em 0;
+  align-items: flex-start; /* Alinea los elementos al inicio de la cruzada */
+  background: var(--isabelline);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.65em; /* Increased padding for description */
+  margin-top: 2em; /* Increased margin for separation */
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  font-family: "IM Fell English SC", serif;
+  background-color: #D9D9D9; /* New background color */
+  color: black; /* New text color */
+}
+
+#descripcion {
+  padding: 1em; /* Thicker input */
+}
+
+/* Configuración de columna para imagen y detalles */
+.imagen-form,
+.form-detalles {
+  flex: none; /* Se desactiva flex para que no tomen un espacio igual */
+  margin: 0.5em; /* Espacio entre las columnas */
+  width: 300px; /* Ancho fijo para las columnas */
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Alineación central para los elementos internos */
+  border-radius: 25px;
+}
+
+.form-detalles {
+  background: var(--isabelline);
+  background: #F5F0EE;
+}
+
+/* Configuración para la imagen dentro de .imagen-form */
+.imagen-form img {
+  max-width: 90%; /* La imagen no sobrepasará su contenedor */
+  max-height: 90%; /* La imagen no sobrepasará el alto del contenedor */
+  object-fit: contain; /* La imagen se ajustará dentro del contenedor manteniendo su aspecto */
+  padding: 25px; /* Padding para que la imagen no toque los bordes */
+  border-radius: 35px; /* Bordes redondeados para la imagen */
+}
+
+/* Establece un tamaño fijo para el contenedor de la imagen, independiente del contenido */
+.imagen-form {
+  height: 350px; /* Alto fijo para el contenedor de la imagen */
+  width: 300px; /* Ancho fijo para el contenedor de la imagen */
+}
+
+
+/* Configuración de los botones al final del modal */
+.form-buttons {
+  display: flex;
+  justify-content: center; /* This will center the buttons in the container */
+  margin-top: 1em;
+  font-family: "IM Fell English SC", serif;
+}
+
+.form-buttons button {
+  padding: 0.75em 1.5em; /* Larger padding for bigger button */
+  border-radius: 20px; /* Rounded corners */
+  margin: 0 0.5em; /* Separation between buttons */
+  font-size: 1em; /* Adjust the font size as needed */
+  justify-content: center; /* Centra los botones en el contenedor */
+  font-family: "IM Fell English SC", serif;
+}
+/* Estilos específicos para el botón de cancelar */
+.cancel-button {
+  background-color: #F5F0EE; /* Color de fondo */
+  color: black;
+  font-family: "IM Fell English SC", serif;
+  border: #1e1e1e; /* Remove border color */
+  font-size: 1em;
+  justify-content: center; /* Centra los botones en el contenedor */
+  /* Aquí puedes agregar más estilos para el botón si es necesario */
+}
+
+/* Estilos específicos para el botón de agregar */
+.submit-button {
+  background-color: var(--red); /* Utiliza variable CSS para el color */
+  color: var(--isabelline);
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  border: #1e1e1e; /* Remove border color */
+  justify-content: center; /* Centra los botones en el contenedor */
+  /* Aquí puedes agregar más estilos para el botón si es necesario */
+}
+
+/*REISTRO EXITOSO*/
+
+/* Aplica el mismo fondo y color de texto que los inputs */
+#confirmation-modal .details-modal-content {
+  background: var(--isabelline);
+  color: black;
+  font-family: "IM Fell English SC", serif;
+  text-align: center; /* Centra el texto del título y el párrafo */
+}
+
+/* Se reutilizan estilos para los botones del modal de detalles */
+#confirmation-modal .form-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+#confirmation-modal .close-button2 {
+  padding: 0.75em 1.5em;
+  border-radius: 20px;
+  margin: 0 0.5em;
+  font-size: 1em;
+  background-color: var(--red); /* Utiliza variable CSS para el color */
+  color: var(--isabelline);
+  font-family: "IM Fell English SC", serif;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#confirmation-modal .close-button2:hover {
+  background-color: var(--gray); /* Color al pasar el cursor */
+}
+
+
+.form-buttons2 {
+  width: 100%; /* Esto permite que el botón se centre en el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente en su contenedor */
+  padding-bottom: 1em; /* Esto agrega algo de espacio en la parte inferior si es necesario */
+}
+
+.close-button2 {
+  /* Tus otros estilos... */
+  margin-bottom: 0; /* Asegúrate de que no haya margen extra empujando el botón hacia arriba */
+}
+
+=======
 
 @media (max-width: 1000px) {
   section{
@@ -350,3 +671,4 @@ footer {
     margin: 0.5em 0;
   }
 }
+>>>>>>> cb42f58ab83178c8e8094731717589fb2b6fab74
