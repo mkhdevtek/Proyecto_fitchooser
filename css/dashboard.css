@@ -302,13 +302,14 @@ footer {
   color: var(--isabelline);
   border-radius: 30px 30px 0 0;
 }
+
+/*ESTILOS DE Recuadro punteado para arrastrar las imágenes*/
 /* CSS DE FER */
 .upload-section {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3em;
-
 }
 
 .upload-box {
@@ -351,6 +352,7 @@ footer {
 .upload-label:hover {
   background-color: var(--gray);
 }
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
@@ -384,7 +386,6 @@ footer {
   margin-top: 4em;
 }
 
-
 .upload-instructions {
   padding-top: 4em;
 }
@@ -411,7 +412,6 @@ footer {
   height: auto;
 }
 
-
 .upload-instructions p {
   color: var(--erieblack);
   font-family: "IM Fell English SC", serif;
@@ -437,18 +437,21 @@ footer {
   display: none;
 }
 
-
-
-/*ESTILOS DE Recuadro punteado para arrastrar las imágenes*/
 .upload-area {
   border: 2px dashed #ccc; /* Recuadro punteado */
   border-radius: 20px;
   padding: 2em;
   margin-bottom: 1em;
   text-align: center;
+  background-color: #f8f8f8; /* Color de fondo claro para destacar el área */
+  min-height: 200px; /* Asegura que el área es suficientemente grande para soltar archivos */
 }
 
 .upload-button {
+  position: absolute;
+  bottom: 80px; /* Ajusta este valor según sea necesario */
+  left: 50%; /* Centra el botón horizontalmente relativo a su contenedor padre */
+  transform: translateX(-50%); /* Asegura que esté perfectamente centrado */
   background-color: var(--red);
   color: var(--isabelline);
   border: none;
@@ -458,10 +461,9 @@ footer {
   cursor: pointer;
   border-radius: 20px;
   transition: background-color 0.3s ease;
-  display: inline-block; /* Asegúrate de que el botón no esté oculto */
-  margin-top: 1em; /* Espacio por encima del botón */
+  display: inline-block;
+  z-index: 10; /* Asegúrate de que el botón esté sobre otros elementos si es necesario */
 }
-
 
 
 /*ESTILOS DE Modal para los detalles de la prenda subida*/
@@ -535,47 +537,60 @@ footer {
   width: 300px; /* Ancho fijo para el contenedor de la imagen */
 }
 
-
 /* Configuración de los botones al final del modal */
 .form-buttons {
   display: flex;
-  justify-content: center; /* This will center the buttons in the container */
-  margin-top: 1em;
-  font-family: "IM Fell English SC", serif;
+  justify-content: center; /* Esto centrará los botones en el contenedor */
+  align-items: center; /* Esto alineará los botones verticalmente */
+  padding: 0.45em; /* Añade algo de espacio alrededor de los botones */
 }
 
+/* Estilos base para los botones */
 .form-buttons button {
-  padding: 0.75em 1.5em; /* Larger padding for bigger button */
-  border-radius: 20px; /* Rounded corners */
-  margin: 0 0.5em; /* Separation between buttons */
-  font-size: 1em; /* Adjust the font size as needed */
-  justify-content: center; /* Centra los botones en el contenedor */
-  font-family: "IM Fell English SC", serif;
+  padding: 0.75em 1.5em; /* Espaciado interno */
+  border-radius: 20px; /* Bordes redondeados */
+  margin: 0 0.5em; /* Separación entre botones */
+  font-size: 1em; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  background-color: var(--erieblack); /* Color de fondo inicial */
+  color: var(--isabelline); /* Color del texto */
+  border: none; /* Sin bordes */
 }
+
+/* Efectos al pasar el ratón sobre los botones */
+.form-buttons button:hover {
+  background-color: var(--red); /* Cambia el color de fondo */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para dar sensación de elevación */
+}
+
 /* Estilos específicos para el botón de cancelar */
 .cancel-button {
-  background-color: #F5F0EE; /* Color de fondo */
-  color: black;
-  font-family: "IM Fell English SC", serif;
-  border: #1e1e1e; /* Remove border color */
-  font-size: 1em;
-  justify-content: center; /* Centra los botones en el contenedor */
-  /* Aquí puedes agregar más estilos para el botón si es necesario */
+  background-color: var(--gray); /* Color de fondo más claro */
+}
+
+.cancel-button:hover {
+  background-color: var(--red); /* Color de fondo al hacer hover */
 }
 
 /* Estilos específicos para el botón de agregar */
 .submit-button {
-  background-color: var(--red); /* Utiliza variable CSS para el color */
-  color: var(--isabelline);
-  font-family: "IM Fell English SC", serif;
-  font-size: 1em;
-  border: #1e1e1e; /* Remove border color */
-  justify-content: center; /* Centra los botones en el contenedor */
-  /* Aquí puedes agregar más estilos para el botón si es necesario */
+  background-color: var(--lasuli); /* Color de fondo distintivo */
 }
 
-/*REISTRO EXITOSO*/
+.submit-button:hover {
+  background-color: var(--red); /* Color de fondo al hacer hover */
+}
+.cancel-button, .submit-button {
+  margin: 0 10px; /* Añade un margen horizontal para asegurar espacio entre los botones */
+  text-align: center; /* Asegura que el texto dentro del botón esté centrado */
+  padding: 0.75em 1.5em; /* Ajusta el relleno según sea necesario */
+  font-family: "IM Fell English SC", serif;
+}
 
+
+/*REISTRO EXITOSO*/
 /* Aplica el mismo fondo y color de texto que los inputs */
 #confirmation-modal .details-modal-content {
   background: var(--isabelline);
@@ -607,7 +622,6 @@ footer {
 #confirmation-modal .close-button2:hover {
   background-color: var(--gray); /* Color al pasar el cursor */
 }
-
 
 .form-buttons2 {
   width: 100%; /* Esto permite que el botón se centre en el espacio disponible */

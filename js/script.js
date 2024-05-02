@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         reader.readAsDataURL(files[0]);
     }
+
     // Manejador de evento para el botón 'Cancelar'
     var cancelButton = document.querySelector('.cancel-button');
     cancelButton.addEventListener('click', function() {
