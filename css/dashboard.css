@@ -302,13 +302,15 @@ footer {
   color: var(--isabelline);
   border-radius: 30px 30px 0 0;
 }
+
+
 /* CSS DE FER */
+/*ESTILOS DE Recuadro punteado para arrastrar las imágenes*/
 .upload-section {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 3em;
-
 }
 
 .upload-box {
@@ -411,7 +413,6 @@ footer {
   height: auto;
 }
 
-
 .upload-instructions p {
   color: var(--erieblack);
   font-family: "IM Fell English SC", serif;
@@ -437,18 +438,21 @@ footer {
   display: none;
 }
 
-
-
-/*ESTILOS DE Recuadro punteado para arrastrar las imágenes*/
 .upload-area {
   border: 2px dashed #ccc; /* Recuadro punteado */
   border-radius: 20px;
   padding: 2em;
   margin-bottom: 1em;
   text-align: center;
+  background-color: #f8f8f8; /* Color de fondo claro para destacar el área */
+  min-height: 200px; /* Asegura que el área es suficientemente grande para soltar archivos */
 }
 
 .upload-button {
+  position: absolute;
+  bottom: 150px; /* Ajusta este valor según sea necesario */
+  left: 50%; /* Centra el botón horizontalmente relativo a su contenedor padre */
+  transform: translateX(-50%); /* Asegura que esté perfectamente centrado */
   background-color: var(--red);
   color: var(--isabelline);
   border: none;
@@ -458,8 +462,8 @@ footer {
   cursor: pointer;
   border-radius: 20px;
   transition: background-color 0.3s ease;
-  display: inline-block; /* Asegúrate de que el botón no esté oculto */
-  margin-top: 1em; /* Espacio por encima del botón */
+  display: inline-block;
+  z-index: 10; /* Asegúrate de que el botón esté sobre otros elementos si es necesario */
 }
 
 
@@ -537,45 +541,62 @@ footer {
 
 
 /* Configuración de los botones al final del modal */
+/* Estilos base para los botones */
 .form-buttons {
   display: flex;
-  justify-content: center; /* This will center the buttons in the container */
-  margin-top: 1em;
+  justify-content: center; /* Esto centrará los botones en el contenedor */
+  align-items: center; /* Esto alineará los botones verticalmente */
+  padding: 0.5em 0; /* Reducir el relleno alrededor de los botones */
+
+}
+.cancel-button, .submit-button {
+  text-align: center; /* Asegura que el texto dentro del botón esté centrado */
+  padding: 0.5em 1em; /* Reducido desde 0.75em 1.5em */
+  font-size: 0.8em; /* Reducido para disminuir el tamaño del texto */
+  margin: 0 5px; /* Reducir el margen para acercar los botones entre sí */
   font-family: "IM Fell English SC", serif;
 }
 
 .form-buttons button {
-  padding: 0.75em 1.5em; /* Larger padding for bigger button */
-  border-radius: 20px; /* Rounded corners */
-  margin: 0 0.5em; /* Separation between buttons */
-  font-size: 1em; /* Adjust the font size as needed */
-  justify-content: center; /* Centra los botones en el contenedor */
-  font-family: "IM Fell English SC", serif;
+  padding: 0.75em 1.5em; /* Espaciado interno */
+  border-radius: 20px; /* Bordes redondeados */
+  margin: 0 0.5em; /* Separación entre botones */
+  font-size: 1em; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  background-color: var(--erieblack); /* Color de fondo inicial */
+  color: var(--isabelline); /* Color del texto */
+  border: none; /* Sin bordes */
+
 }
+
+/* Efectos al pasar el ratón sobre los botones */
+.form-buttons button:hover {
+  background-color: var(--red); /* Cambia el color de fondo */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para dar sensación de elevación */
+}
+
 /* Estilos específicos para el botón de cancelar */
 .cancel-button {
-  background-color: #F5F0EE; /* Color de fondo */
-  color: black;
-  font-family: "IM Fell English SC", serif;
-  border: #1e1e1e; /* Remove border color */
-  font-size: 1em;
-  justify-content: center; /* Centra los botones en el contenedor */
-  /* Aquí puedes agregar más estilos para el botón si es necesario */
+  background-color: var(--gray); /* Color de fondo más claro */
+}
+
+.cancel-button:hover {
+  background-color: var(--red); /* Color de fondo al hacer hover */
 }
 
 /* Estilos específicos para el botón de agregar */
 .submit-button {
-  background-color: var(--red); /* Utiliza variable CSS para el color */
-  color: var(--isabelline);
-  font-family: "IM Fell English SC", serif;
-  font-size: 1em;
-  border: #1e1e1e; /* Remove border color */
-  justify-content: center; /* Centra los botones en el contenedor */
-  /* Aquí puedes agregar más estilos para el botón si es necesario */
+  background-color: var(--lasuli); /* Color de fondo distintivo */
 }
 
-/*REISTRO EXITOSO*/
+.submit-button:hover {
+  background-color: var(--red); /* Color de fondo al hacer hover */
+}
 
+
+/*REISTRO EXITOSO*/
 /* Aplica el mismo fondo y color de texto que los inputs */
 #confirmation-modal .details-modal-content {
   background: var(--isabelline);
@@ -608,7 +629,6 @@ footer {
   background-color: var(--gray); /* Color al pasar el cursor */
 }
 
-
 .form-buttons2 {
   width: 100%; /* Esto permite que el botón se centre en el espacio disponible */
   display: flex;
@@ -617,7 +637,66 @@ footer {
 }
 
 .close-button2 {
-  /* Tus otros estilos... */
   margin-bottom: 0; /* Asegúrate de que no haya margen extra empujando el botón hacia arriba */
+}
+
+.checkmark-circle {
+  width: 100px; /* Tamaño más grande del círculo */
+  height: 100px; /* Tamaño más grande del círculo */
+  background-color: #4CAF50; /* Mantén el color verde o elige otro si lo deseas */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.checkmark {
+  width: 12px; /* Ancho de la palomita */
+  height: 40px; /* Altura de la palomita */
+  border-radius: 2px; /* Radio del borde más pequeño para suavizar los bordes */
+  transform: rotate(45deg); /* Mantiene la inclinación */
+  position: relative;
+  left: 10px; /* Ajusta para centrar horizontalmente dentro del círculo */
+  top: 0; /* Ajusta para centrar verticalmente si es necesario */
+}
+
+.checkmark:before {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 12px; /* Ancho del palo vertical de la palomita */
+  height: 25px; /* Altura del palo vertical de la palomita */
+  left: 0; /* Posición relativa al centro del 'checkmark' */
+  top: 15px; /* Ajusta para que la intersección sea en el punto correcto */
+  animation: checkmark-expand 0.3s ease forwards;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 25px; /* Ancho del palo horizontal de la palomita */
+  height: 12px; /* Altura del palo horizontal de la palomita */
+  left: -13px; /* Ajusta para que se extienda hacia la izquierda desde la intersección */
+  top: 12px; /* Posición vertical para que alinee con el vertical */
+  animation: checkmark-expand 0.3s ease forwards 0.3s;
+}
+
+.checkmark:before, .checkmark:after {
+  content: '';
+  position: absolute;
+  background-color: white;
+}
+
+@keyframes checkmark-expand {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
