@@ -25,28 +25,30 @@
     </header>
 
     <div class="filter">
-      <a href="#popup-filter"><h3>Filtra</h3> </a>
+      <a href="#popup-filter" style="text-decoration: none"><h3>Filtra</h3> </a>
     </div>
 
     <div id="popup-filter" class="modal">
       <div class="popup-inner">
-        <h2>Selecciona tu estilo</h2>
-        <form action="dashboard.html">
-          <input type="checkbox" name="hoddies" id="hoddies" />
-          <label for="hoddies">Modo Guerra</label>
-          <input type="checkbox" name="camisas" id="camisas" />
-          <label for="camisas">Modo Setso</label>
-          <input type="checkbox" name="pantalon" id="pantalon" />
-          <label for="pantalon">Modo Agresivo</label>
-          <input type="checkbox" name="gorra" id="gorra" />
-          <label for="gorra">Modo Muerte</label>
-          <input
-            type="submit"
-            name="filter-button"
-            id="filter-button"
-            value="Filtrar"
-          />
-        </form>
+        <div class="popup-form">
+          <h2>Selecciona tu estilo</h2>
+          <form action="dashboard.html">
+            <input type="checkbox" name="hoddies" id="hoddies" />
+            <label for="hoddies">Modo Guerra</label>
+            <input type="checkbox" name="camisas" id="camisas" />
+            <label for="camisas">Modo Setso</label>
+            <input type="checkbox" name="pantalon" id="pantalon" />
+            <label for="pantalon">Modo Agresivo</label>
+            <input type="checkbox" name="gorra" id="gorra" />
+            <label for="gorra">Modo Muerte</label>
+            <input
+              type="submit"
+              name="filter-button"
+              id="filter-button"
+              value="Filtrar"
+            />
+          </form>
+        </div>
         <a href="#" class="close">X</a>
       </div>
     </div>
@@ -64,19 +66,19 @@
         </ul>
       </nav>
       <article>
-        <div class="hoddies">
+        <div class="card hoddies">
           <img src="img/Hodie.jpg" alt="imagen" />
           <h3>Hoddies</h3>
         </div>
-        <div class="camisas">
+        <div class="card camisas">
           <img src="img/tshirt.jpg" alt="imagen" />
           <h3>Camisas</h3>
         </div>
-        <div class="pantalon">
+        <div class="card pantalon">
           <img src="img/Jeans.jpg" alt="imagen" />
           <h3>Pantalon</h3>
         </div>
-        <div class="gorra">
+        <div class="card gorra">
           <img src="img/gorra.jpg" alt="imagen" />
           <h3>Gorra</h3>
         </div>
