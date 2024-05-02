@@ -1,8 +1,8 @@
 :root {
   --lasuli: #416788;
   --erieblack: #1e1e1e;
-  --erieblack_alpha:rgba(30, 30, 30, 0.45);
-  --isabelline: #F5F0EE;
+  --erieblack_alpha: rgba(30, 30, 30, 0.45);
+  --isabelline: #f5f0ee;
   --isabelline_alpha: #f5fdeea4;
   --red: #fd9696;
   --gray: rgba(217, 217, 217, 0.37);
@@ -36,7 +36,7 @@ header {
   height: 20vh;
 }
 
-.logo{
+.logo {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -47,12 +47,12 @@ header {
   transition: all 0.3s ease;
 }
 
-.logo:hover{
+.logo:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.logo img{
+.logo img {
   --width: 20%;
   --height: 80%;
   width: var(--width);
@@ -62,7 +62,7 @@ header {
   padding: 0 10px;
 }
 
-.logo h1{
+.logo h1 {
   font-family: "Imperial Script", cursive;
   font-weight: 500;
   font-style: normal;
@@ -87,7 +87,7 @@ section {
   align-items: center;
   height: 70dvh;
   width: 100%;
-  color: var(--erieblack) ;
+  color: var(--erieblack);
 }
 
 section nav ul{
@@ -106,7 +106,7 @@ section article {
 }
 
 section article div {
-  --width:22%;
+  --width: 22%;
   --height: 90%;
 
   display: flex;
@@ -119,13 +119,13 @@ section article div {
   border-radius: 20px;
   transition: all 0.3s ease;
 }
-section article div:hover{
+section article div:hover {
   transform: scale(1.03);
   box-shadow: 0 0 30px -10px var(--erieblack);
   /* cursor: pointer; */
 }
 
-section article div img{
+section article div img {
   width: 87%;
   height: 80%;
   border-radius: 10px;
@@ -160,7 +160,7 @@ section ul {
   align-content: space-around;
   list-style: none;
   justify-content: space-evenly;
-  align-items: center ;
+  align-items: center;
   align-content: space-around;
   padding: 0 20px;
   width: var(--width);
@@ -169,13 +169,13 @@ section ul {
   border-radius: calc(var(--height) / 2);
   transition: all 0.2s ease;
 }
-section ul:hover{
+section ul:hover {
   box-shadow: 0 0 20px -10px var(--erieblack);
   transform: scale(1.01);
 }
 
 section ul li {
-  --size:75px;
+  --size: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,9 +185,9 @@ section ul li {
   background-color: var(--isabelline);
   border-radius: calc(var(--height) / 2);
   transition: all 0.3s ease;
-  box-shadow: 0 0 30px -10px rgba(50,50,50, 0.2) inset;
+  box-shadow: 0 0 30px -10px rgba(50, 50, 50, 0.2) inset;
 }
-section ul li:hover{
+section ul li:hover {
   background-color: var(--lasuli);
   color: var(--isabelline);
   cursor: pointer;
@@ -201,40 +201,40 @@ section ul li:hover{
   transition: all 0.3s ease;
   padding: 18px 18px;
 }
-.gen{
-  background-image: url("/img/generate_black.png");
+.gen {
+  background-image: url("../img/generate_black.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
 }
-.gen:hover{
-  background-image: url("/img/generate_white.png");
+.gen:hover {
+  background-image: url("../img/generate_white.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
 }
 
 .add {
-  background-image: url("/img/add_black.png");
+  background-image: url("../img/add_black.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 40px;
 }
-.add:hover{
-  background-image: url("/img/add_white.png");
+.add:hover {
+  background-image: url("../img/add_white.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 40px;
 }
 
-.user{
-  background-image: url("/img/user_black.png");
+.user {
+  background-image: url("../img/user_black.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
 }
-.user:hover{
-  background-image: url("/img/user_white.png");
+.user:hover {
+  background-image: url("../img/user_white.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
@@ -245,10 +245,10 @@ section ul li a {
   color: var(--erieblack);
 }
 
-.filter{
+.filter {
   position: absolute;
   right: 50px;
-  width:  90px;
+  width: 90px;
   height: 90px;
   background-color: var(--red);
   border-radius: 50%;
@@ -257,13 +257,13 @@ section ul li a {
   z-index: 100;
 }
 
-.filter:hover{
+.filter:hover {
   cursor: pointer;
   transform: scale(1.1);
   box-shadow: 0 0 30px -10px var(--erieblack);
 }
 
-.filter h3{
+.filter h3 {
   font-size: 1.5em;
   font-family: "IM Fell English SC", serif;
   font-weight: 400;
@@ -289,7 +289,7 @@ section ul li a {
   position: relative;
   background: var(--erieblack);
   padding: 1em 2em;
-  border-radius:40px;
+  border-radius: 40px;
   height: 70dvh;
 }
 
@@ -337,16 +337,416 @@ footer {
   border-radius: 30px 30px 0 0;
 }
 
+<<<<<<< Updated upstream
+=======
+/*ESTILOS DE Recuadro punteado para arrastrar las imágenes*/
+/* CSS DE FER */
+.upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.upload-box {
+  width: 60%;
+  background: var(--erieblack);
+  border-radius: 20px;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.upload-box:hover {
+  transform: translateY(-5px);
+}
+
+.upload-desc p {
+  color: var(--isabelline);
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  background-color: var(--red);
+  color: var(--isabelline);
+  padding: 1em 2em;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-label:hover {
+  background-color: var(--gray);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.upload-modal-content {
+  position: relative;
+  background: var(--isabelline);
+  border-radius: 20px;
+  width: 50%;
+  max-width: 600px;
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "IM Fell English SC", serif;
+}
+
+.upload-area {
+  margin-top: 4em;
+}
+
+.upload-instructions {
+  padding-top: 4em;
+}
+
+.close-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.upload-icon {
+  position: absolute;
+  top: 0em;
+  left: 0em;
+}
+
+.upload-icon img {
+  width: 120px;
+  height: auto;
+}
+
+.upload-instructions p {
+  color: var(--erieblack);
+  font-family: "IM Fell English SC", serif;
+  margin-bottom: 1em;
+}
+
+.upload-button {
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 1em 2em;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: var(--gray);
+}
+
+.upload-input {
+  display: none;
+}
+
+.upload-area {
+  border: 2px dashed #ccc; /* Recuadro punteado */
+  border-radius: 20px;
+  padding: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: #f8f8f8; /* Color de fondo claro para destacar el área */
+  min-height: 200px; /* Asegura que el área es suficientemente grande para soltar archivos */
+}
+
+.upload-button {
+  position: absolute;
+  bottom: 80px; /* Ajusta este valor según sea necesario */
+  left: 50%; /* Centra el botón horizontalmente relativo a su contenedor padre */
+  transform: translateX(-50%); /* Asegura que esté perfectamente centrado */
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 1em 2em;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  z-index: 10; /* Asegúrate de que el botón esté sobre otros elementos si es necesario */
+}
+
+/*ESTILOS DE Modal para los detalles de la prenda subida*/
+/* Centro el título */
+.details-modal-content h2 {
+  text-align: center; /* Alineación al centro del título */
+  font-family: "IM Fell English SC", serif;
+  font-size: 2em;
+  color: black;
+}
+
+.details-modal-content {
+  background: var(--isabelline);
+}
+
+/* Configuración de contenedor principal para flexbox */
+.form-field {
+  display: flex; /* Usa flexbox para crear un diseño de columnas */
+  margin: 0.5em 0;
+  align-items: flex-start; /* Alinea los elementos al inicio de la cruzada */
+  background: var(--isabelline);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.65em; /* Increased padding for description */
+  margin-top: 2em; /* Increased margin for separation */
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  font-family: "IM Fell English SC", serif;
+  background-color: #d9d9d9; /* New background color */
+  color: black; /* New text color */
+}
+
+#descripcion {
+  padding: 1em; /* Thicker input */
+}
+
+/* Configuración de columna para imagen y detalles */
+.imagen-form,
+.form-detalles {
+  flex: none; /* Se desactiva flex para que no tomen un espacio igual */
+  margin: 0.5em; /* Espacio entre las columnas */
+  width: 300px; /* Ancho fijo para las columnas */
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Alineación central para los elementos internos */
+  border-radius: 25px;
+}
+
+.form-detalles {
+  background: var(--isabelline);
+  background: #f5f0ee;
+}
+
+/* Configuración para la imagen dentro de .imagen-form */
+.imagen-form img {
+  max-width: 90%; /* La imagen no sobrepasará su contenedor */
+  max-height: 90%; /* La imagen no sobrepasará el alto del contenedor */
+  object-fit: contain; /* La imagen se ajustará dentro del contenedor manteniendo su aspecto */
+  padding: 25px; /* Padding para que la imagen no toque los bordes */
+  border-radius: 35px; /* Bordes redondeados para la imagen */
+}
+
+/* Establece un tamaño fijo para el contenedor de la imagen, independiente del contenido */
+.imagen-form {
+  height: 350px; /* Alto fijo para el contenedor de la imagen */
+  width: 300px; /* Ancho fijo para el contenedor de la imagen */
+}
+
+/* Configuración de los botones al final del modal */
+.form-buttons {
+  display: flex;
+  justify-content: center; /* Esto centrará los botones en el contenedor */
+  align-items: center; /* Esto alineará los botones verticalmente */
+  padding: 0.45em; /* Añade algo de espacio alrededor de los botones */
+}
+
+/* Estilos base para los botones */
+.form-buttons button {
+  padding: 0.75em 1.5em; /* Espaciado interno */
+  border-radius: 20px; /* Bordes redondeados */
+  margin: 0 0.5em; /* Separación entre botones */
+  font-size: 1em; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+  background-color: var(--erieblack); /* Color de fondo inicial */
+  color: var(--isabelline); /* Color del texto */
+  border: none; /* Sin bordes */
+}
+
+/* Efectos al pasar el ratón sobre los botones */
+.form-buttons button:hover {
+  background-color: var(--red); /* Cambia el color de fondo */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar sensación de elevación */
+}
+
+/* Estilos específicos para el botón de cancelar */
+.cancel-button {
+  background-color: var(--gray); /* Color de fondo más claro */
+}
+
+.cancel-button:hover {
+  background-color: var(--red); /* Color de fondo al hacer hover */
+}
+
+/* Estilos específicos para el botón de agregar */
+.submit-button {
+  background-color: var(--lasuli); /* Color de fondo distintivo */
+}
+
+.submit-button:hover {
+  background-color: var(--red); /* Color de fondo al hacer hover */
+}
+.cancel-button,
+.submit-button {
+  margin: 0 10px; /* Añade un margen horizontal para asegurar espacio entre los botones */
+  text-align: center; /* Asegura que el texto dentro del botón esté centrado */
+  padding: 0.75em 1.5em; /* Ajusta el relleno según sea necesario */
+  font-family: "IM Fell English SC", serif;
+}
+
+/*REISTRO EXITOSO*/
+/* Aplica el mismo fondo y color de texto que los inputs */
+#confirmation-modal .details-modal-content {
+  background: var(--isabelline);
+  color: black;
+  font-family: "IM Fell English SC", serif;
+  text-align: center; /* Centra el texto del título y el párrafo */
+}
+
+/* Se reutilizan estilos para los botones del modal de detalles */
+#confirmation-modal .form-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+#confirmation-modal .close-button2 {
+  padding: 0.75em 1.5em;
+  border-radius: 20px;
+  margin: 0 0.5em;
+  font-size: 1em;
+  background-color: var(--red); /* Utiliza variable CSS para el color */
+  color: var(--isabelline);
+  font-family: "IM Fell English SC", serif;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#confirmation-modal .close-button2:hover {
+  background-color: var(--gray); /* Color al pasar el cursor */
+}
+
+.form-buttons2 {
+  width: 100%; /* Esto permite que el botón se centre en el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente en su contenedor */
+  padding-bottom: 1em; /* Esto agrega algo de espacio en la parte inferior si es necesario */
+}
+
+.close-button2 {
+  /* Tus otros estilos... */
+  margin-bottom: 0; /* Asegúrate de que no haya margen extra empujando el botón hacia arriba */
+}
+
+/* CAMBIOS DE OBED */
+>>>>>>> Stashed changes
 @media (max-width: 1000px) {
-  section{
+  section {
     height: 200%;
     margin: 20px 10px;
   }
-  article{
-    flex-wrap: wrap ;
+  article {
+    flex-wrap: wrap;
   }
-  .card{
+  .card {
     width: 45%;
     margin: 0.5em 0;
   }
+<<<<<<< Updated upstream
 }
+=======
+}
+/* FIN CAMBIOS OBED*/
+
+.checkmark-circle {
+  width: 100px; /* Tamaño más grande del círculo */
+  height: 100px; /* Tamaño más grande del círculo */
+  background-color: #4caf50; /* Mantén el color verde o elige otro si lo deseas */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.checkmark {
+  width: 12px; /* Ancho de la palomita */
+  height: 40px; /* Altura de la palomita */
+  border-radius: 2px; /* Radio del borde más pequeño para suavizar los bordes */
+  transform: rotate(45deg); /* Mantiene la inclinación */
+  position: relative;
+  left: 10px; /* Ajusta para centrar horizontalmente dentro del círculo */
+  top: 0; /* Ajusta para centrar verticalmente si es necesario */
+}
+
+.checkmark:before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 12px; /* Ancho del palo vertical de la palomita */
+  height: 25px; /* Altura del palo vertical de la palomita */
+  left: 0; /* Posición relativa al centro del 'checkmark' */
+  top: 15px; /* Ajusta para que la intersección sea en el punto correcto */
+  animation: checkmark-expand 0.3s ease forwards;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 25px; /* Ancho del palo horizontal de la palomita */
+  height: 12px; /* Altura del palo horizontal de la palomita */
+  left: -13px; /* Ajusta para que se extienda hacia la izquierda desde la intersección */
+  top: 12px; /* Posición vertical para que alinee con el vertical */
+  animation: checkmark-expand 0.3s ease forwards 0.3s;
+}
+
+.checkmark:before,
+.checkmark:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+}
+
+@keyframes checkmark-expand {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+>>>>>>> Stashed changes
