@@ -18,7 +18,7 @@
     <header>
       <div class="logo">
         <img src="img/logo.png" alt="Logo" />
-        <a href="/dashboard.html" style="text-decoration: none"
+        <a href="./dashboard.html" style="text-decoration: none"
           ><h1>Fit Chooser</h1></a>
       </div>
       <h2>Stay Cool</h2>
@@ -97,9 +97,9 @@
           <input type="file" name="files" id="file-upload" accept="image/*" multiple class="upload-input">
           <div class="upload-instructions">
             <p>Arrastra la foto a este recuadro</p>
-            <label for="file-upload" class="upload-button">Subir Foto</label>
           </div>
         </div>
+        <label for="file-upload" class="upload-button">Subir Foto</label> <!-- Movido fuera de upload-area -->
       </div>
     </div>
     <!-- Modal para los detalles de la prenda subida -->
@@ -128,6 +128,9 @@
       <div class="popup-inner details-modal-content">
         <h2>Registro completado</h2>
         <p>Tu prenda ha sido agregada con éxito.</p>
+        <div class="checkmark-circle">
+          <div class="checkmark"></div>
+        </div>
         <div class="form-buttons2">
           <button class="close-button2">Cerrar</button>
         </div>
