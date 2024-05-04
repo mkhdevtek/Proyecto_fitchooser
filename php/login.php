@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // Inicio de sesión exitoso
-        header("Location: dashboard.html"); // Redirigir al dashboard
+        header("Location: ../dashboard.html"); // Redirigir al dashboard
         exit();
     } else {
         // Credenciales incorrectas
