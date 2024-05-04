@@ -198,39 +198,39 @@ section ul li:hover{
   padding: 18px 18px;
 }
 .gen{
-  background-image: url("/img/generate_black.png");
+  background-image: url("../img/generate_black.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
 }
 .gen:hover{
-  background-image: url("/img/generate_white.png");
+  background-image: url("../img/generate_white.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
 }
 
 .add {
-  background-image: url("/img/add_black.png");
+  background-image: url("../img/add_black.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 40px;
 }
 .add:hover{
-  background-image: url("/img/add_white.png");
+  background-image: url("../img/add_white.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 40px;
 }
 
 .user{
-  background-image: url("/img/user_black.png");
+  background-image: url("../img/user_black.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
 }
 .user:hover{
-  background-image: url("/img/user_white.png");
+  background-image: url("../img/user_white.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 36px;
