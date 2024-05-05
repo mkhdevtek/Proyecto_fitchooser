@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ./index.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,10 +25,13 @@
     <header>
       <div class="logo">
         <img src="img/logo.png" alt="Logo" />
-        <a href="./dashboard.html" style="text-decoration: none"
+        <a href="./dashboard.php" style="text-decoration: none"
           ><h1>Fit Chooser</h1></a>
       </div>
       <h2>Stay Cool</h2>
+      <div>
+        <a href="php/logout.php" style="text-decoration: none; color: white; background-color: red; padding: 10px 20px; border-radius: 5px; font-size: 16px;">Cerrar Sesión</a>
+      </div>
     </header>
 
     <div class="filter">
@@ -32,7 +42,7 @@
       <div class="popup-inner">
         <div class="popup-form">
           <h2>Selecciona tu estilo</h2>
-          <form action="dashboard.html">
+          <form action="dashboard.php">
             <input type="checkbox" name="hoddies" id="hoddies" />
             <label for="hoddies">Modo Guerra</label>
             <input type="checkbox" name="camisas" id="camisas" />
@@ -61,7 +71,7 @@
           </li>
           <li><a href="#popup-upload" class="icon add"></a></li>
           <li>
-            <a href="profile.html" class="icon user"></a>
+            <a href="profile.php" class="icon user"></a>
           </li>
         </ul>
       </nav>
@@ -89,7 +99,7 @@
       <div class="popup-inner upload-modal-content">
         <a href="#" class="close-button">X</a>
         <div class="upload-icon">
-          <img src="/img/logo.png" alt="Upload Icon" />
+          <img src="./img/logo.png" alt="Upload Icon" />
         </div>
         <!-- Recuadro punteado para arrastrar las imágenes -->
         <div class="upload-area">
@@ -139,6 +149,6 @@
     <footer>
       <p>Fit Chooser 2021 ©</p>
     </footer>
-    <script src="/js/script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

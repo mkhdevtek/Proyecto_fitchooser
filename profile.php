@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ./index.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,7 +224,7 @@
     <header>
         <div class="logo">
           <img src="img/logo.png" alt="Logo" />
-          <a href="./dashboard.html" style="text-decoration: none"
+          <a href="./dashboard.php" style="text-decoration: none"
             ><h1>Fit Chooser</h1></a
           >
         </div>

@@ -1,4 +1,6 @@
 <?php
+session_start(); // Iniciar la sesión al principio del script
+
 // Incluir el archivo de conexión a la base de datos
 include 'conexionbd.php';
 
@@ -16,7 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // Inicio de sesión exitoso
-        header("Location: ../dashboard.html"); // Redirigir al dashboard
+        $_SESSION['usuario'] = $correo; // Guardar el correo en la sesión
+        header("Location: ../dashboard.php"); // Redirigir al dashboard
         exit();
     } else {
         // Credenciales incorrectas
