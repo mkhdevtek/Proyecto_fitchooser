@@ -25,7 +25,7 @@ if (!isset($_SESSION['usuario'])) {
     <header>
       <div class="logo">
         <img src="img/logo.png" alt="Logo" />
-        <a href="./dashboard.html" style="text-decoration: none"
+        <a href="./dashboard.php" style="text-decoration: none"
           ><h1>Fit Chooser</h1></a>
       </div>
       <h2>Stay Cool</h2>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['usuario'])) {
       <div class="popup-inner">
         <div class="popup-form">
           <h2>Selecciona tu estilo</h2>
-          <form action="dashboard.html">
+          <form action="dashboard.php">
             <input type="checkbox" name="hoddies" id="hoddies" />
             <label for="hoddies">Modo Guerra</label>
             <input type="checkbox" name="camisas" id="camisas" />
