@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ./index.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,6 +29,9 @@
           ><h1>Fit Chooser</h1></a>
       </div>
       <h2>Stay Cool</h2>
+      <div>
+        <a href="php/logout.php" style="text-decoration: none; color: white; background-color: red; padding: 10px 20px; border-radius: 5px; font-size: 16px;">Cerrar Sesión</a>
+      </div>
     </header>
 
     <div class="filter">
@@ -61,7 +71,7 @@
           </li>
           <li><a href="#popup-upload" class="icon add"></a></li>
           <li>
-            <a href="profile.html" class="icon user"></a>
+            <a href="profile.php" class="icon user"></a>
           </li>
         </ul>
       </nav>
