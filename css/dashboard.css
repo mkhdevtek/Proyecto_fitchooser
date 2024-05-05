@@ -546,47 +546,35 @@ footer {
 }
 
 /* Estilos base para los botones */
-.form-buttons button {
-  padding: 0.75em 1.5em; /* Espaciado interno */
-  border-radius: 20px; /* Bordes redondeados */
-  margin: 0 0.5em; /* Separación entre botones */
-  font-size: 1em; /* Tamaño de la fuente */
-  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-  background-color: var(--erieblack); /* Color de fondo inicial */
-  color: var(--isabelline); /* Color del texto */
-  border: none; /* Sin bordes */
+
+/* Estilos para el botón de cancelar reutilizando la clase para consistencia visual */
+/* Estilos para el contenedor de los botones */
+.form-buttons {
+  display: flex;
+  justify-content: center;  /* Centra los botones horizontalmente */
+  align-items: center;  /* Alinea los botones verticalmente */
+  gap: 20px;  /* Espacio entre los botones */
+  padding: 1em 0;  /* Espacio arriba y abajo dentro del contenedor */
 }
 
-/* Efectos al pasar el ratón sobre los botones */
-.form-buttons button:hover {
-  background-color: var(--red); /* Cambia el color de fondo */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para dar sensación de elevación */
-}
-
-/* Estilos específicos para el botón de cancelar */
-.cancel-button {
-  background-color: var(--gray); /* Color de fondo más claro */
-}
-
-.cancel-button:hover {
-  background-color: var(--red); /* Color de fondo al hacer hover */
-}
-
-/* Estilos específicos para el botón de agregar */
-.submit-button {
-  background-color: var(--lasuli); /* Color de fondo distintivo */
-}
-
-.submit-button:hover {
-  background-color: var(--red); /* Color de fondo al hacer hover */
-}
+/* Estilos específicos para cada botón */
 .cancel-button, .submit-button {
-  margin: 0 10px; /* Añade un margen horizontal para asegurar espacio entre los botones */
-  text-align: center; /* Asegura que el texto dentro del botón esté centrado */
-  padding: 0.75em 1.5em; /* Ajusta el relleno según sea necesario */
+  display: inline-block;
+  z-index: 10;
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 0.75em 1.5em;  /* Reducción del padding para hacer el botón más pequeño */
   font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Añadimos hover para ambos botones */
+.cancel-button:hover, .submit-button:hover {
+  background-color: var(--gray);  /* Cambio de color al hacer hover */
 }
 
 
