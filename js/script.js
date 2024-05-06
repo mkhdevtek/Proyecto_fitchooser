@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Manejador de evento para el botón 'Cancelar'
     var cancelButton = document.querySelector('.cancel-button');
     cancelButton.addEventListener('click', function() {
-        window.location.href = './dashboard.html'; // Asegúrate de que esta sea la URL correcta de tu dashboard
+        window.location.href = './dashboard.php'; // Asegúrate de que esta sea la URL correcta de tu dashboard
     });
 
     // Manejador de evento para el botón 'Agregar'
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     closeButton.addEventListener('click', function() {
         // Ocultar modal de confirmación
         document.getElementById('confirmation-modal').style.display = 'none';
-        window.location.href = './dashboard.html';
+        window.location.href = './dashboard.php';
     });
 
 
