@@ -244,3 +244,8 @@ footer p{
     }
 
 }
+.login .checkbox label {
+    font-family: "IM Fell English SC", serif;
+    color: var(--isabelline);
+    font-size: 16pt;
+}
