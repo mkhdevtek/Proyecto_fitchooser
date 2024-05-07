@@ -1,4 +1,5 @@
 <?php
+session_start(); // Iniciar la sesión al principio del script
 include 'conexionbd.php';  // Incluye el archivo de conexión a la base de datos
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,14 +13,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Encriptar la contraseña antes de guardarla en la base de datos
-    $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
+    //$hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
 
     try {
         $stmt = $pdo->prepare("INSERT INTO usuario (correo, contrasena) VALUES (:correo, :contrasena)");
         $stmt->bindParam(':correo', $correo);
-        $stmt->bindParam(':contrasena', $hashed_password);
+        //$stmt->bindParam(':contrasena', $hashed_password);
+        $stmt->bindParam(':contrasena', $contrasena);
         $stmt->execute();
-        header("Location: success.html");  // Redirige a la página de éxito
+        // Si el usuario se registra correctamente, también iniciamos su sesión automáticamente
+        $_SESSION['usuario'] = $correo; // Guardar el correo en la sesión
+        header("Location: ../datosini.php");  // Redirige al dashboard
         exit;
     } catch (PDOException $e) {
         die("Error al registrar el usuario: " . $e->getMessage());
