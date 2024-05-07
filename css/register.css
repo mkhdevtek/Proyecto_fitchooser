@@ -249,3 +249,8 @@ footer p{
     color: var(--isabelline);
     font-size: 16pt;
 }
+.login .TITULO label {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 24pt; /* Tamaño medianamente grande */
+    color: var(--isabelline);
+}

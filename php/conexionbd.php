@@ -1,6 +1,6 @@
 <?php
 // Configuración de la conexión
-$servername = "localhost"; // Nombre del servidor (generalmente localhost)
+$servername = "localhost";
 $username = "bigboss"; // Nombre de usuario de la base de datos
 $password = "^9KPknWbBqdR4iSd*v"; // Contraseña de la base de datos
 $database = "fitchooser"; // Nombre de la base de datos
