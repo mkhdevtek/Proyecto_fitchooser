@@ -76,6 +76,7 @@ header h2 {
     font-style: normal;
     margin-top: -55px;
 }
+
 .login {
     display: flex;
     justify-content: center;
@@ -84,9 +85,6 @@ header h2 {
     width: 100%;
     background-color: var(--isabelline);
 }
-
-
-
 
 input[type="text"],
 input[type="password"] {
@@ -184,7 +182,6 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-
 input[type="submit"]:hover {
     background: #ff7f7f;
     transform: scale(1.04);  /* Transformación al pasar el cursor */
@@ -197,7 +194,6 @@ input[type="submit"]:active {
 input[type="submit"]:focus {
     outline: none;
 }
-
 
 a {
     color: var(--isabelline);
@@ -270,3 +266,8 @@ footer p{
 
 }
 
+.login .TITULO label {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 24pt; /* Tamaño medianamente grande */
+    color: var(--isabelline);
+}

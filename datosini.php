@@ -27,6 +27,9 @@ if (!isset($_SESSION['usuario'])) {
 
 <section class="login">
     <form action="php/datosiniPHP.php" method="post">
+        <div class="TITULO">
+            <label>Cuentanos sobre ti</label>
+        </div>
         <div class="form-row"> <!-- Contenedor para las dos columnas -->
             <div class="PARTE1">
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
