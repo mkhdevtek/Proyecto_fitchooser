@@ -113,26 +113,31 @@ if (!isset($_SESSION['usuario'])) {
       </div>
     </div>
     <!-- Modal para los detalles de la prenda subida -->
-    <div id="details-modal" class="modal">
-      <div class="popup-inner details-modal-content">
-        <h2>Detalles de la prenda</h2>
-        <div class="form-field">
-          <div class="imagen-form">
-          <img id="detail-image-preview" alt="Vista previa de la prenda" />
-          </div>
-          <div class="form-detalles">
-          <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
-            <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
-          <input type="text" id="temporada" name="temporada" placeholder="Temporada">
-          <input type="text" id="color" name="color" placeholder="Color">
-          </div>
+    <form id="details-form" action="php/upload.php" method="POST" enctype="multipart/form-data">
+        <div id="details-modal" class="modal">
+            <div class="popup-inner details-modal-content">
+                <a href="#" class="close-button">X</a>
+                <h2>Detalles de la prenda</h2>
+                <div class="form-field">
+                    <div class="imagen-form">
+                        <input type="file" name="image" id="file-upload" accept="image/*" class="upload-input">
+                        <img id="image-preview" style="display:none;" alt="Vista previa de la imagen" />
+                    </div>
+                    <div class="form-detalles">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda" required>
+                        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción de la prenda" required>
+                        <input type="text" id="temporada" name="temporada" placeholder="Temporada" required>
+                        <input type="text" id="color" name="color" placeholder="Color" required>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="cancel-button">Cancelar</button>
+                    <button type="submit" class="submit-button">Agregar</button>
+                </div>
+            </div>
         </div>
-        <div class="form-buttons">
-          <button class="cancel-button">Cancelar</button>
-          <button class="submit-button">Agregar</button>
-        </div>
-      </div>
-    </div>
+    </form>
+
     <!-- Modal para confirmación de registro completado -->
     <div id="confirmation-modal" class="modal">
       <div class="popup-inner details-modal-content">
