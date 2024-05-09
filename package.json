@@ -1,0 +1,12 @@
+{
+  "name": "proyecto_fitchooser",
+  "version": "1.0.0",
+  "description": "Este es un simple proyecto de la aplicacion de los conocimientos de clase aplicados a una agina web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
