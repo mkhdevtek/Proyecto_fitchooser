@@ -104,16 +104,15 @@ if (!isset($_SESSION['usuario'])) {
             <!-- Recuadro punteado para arrastrar las imágenes -->
             <div class="upload-area">
                 <img id="image-preview" style="display:none;" alt="Vista previa de la imagen" />
-                <input type="file" name="files" id="file-upload" accept="image/*" multiple class="upload-input">
-                <div class="upload-instructions">
-                    <p>Arrastra la foto a este recuadro</p>
-                </div>
+                    <input type="file" name="file-upload" id="file-upload" accept="image/*" multiple class="upload-input">
+                    <div class="upload-instructions">
+                        <p>Arrastra la foto a este recuadro</p>
+                    </div>
+                    <label for="file-upload" class="upload-button">Subir Foto</label>
             </div>
-            <label for="file-upload" class="upload-button">Subir Foto</label> <!-- Movido fuera de upload-area -->
         </div>
     </div>
     <!-- Modal para los detalles de la prenda subida -->
-    <form id="details-form" action="php/upload.php" method="POST" enctype="multipart/form-data">
     <div id="details-modal" class="modal">
         <div class="popup-inner details-modal-content">
             <h2>Detalles de la prenda</h2>
@@ -135,7 +134,6 @@ if (!isset($_SESSION['usuario'])) {
             </div>
         </div>
     </div>
-    </form>
     <!-- Modal para confirmación de registro completado -->
     <div id="confirmation-modal" class="modal">
         <div class="popup-inner details-modal-content">
