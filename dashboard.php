@@ -113,6 +113,7 @@ if (!isset($_SESSION['usuario'])) {
         </div>
     </div>
     <!-- Modal para los detalles de la prenda subida -->
+    <form id="details-form" action="php/upload.php" method="POST" enctype="multipart/form-data">
     <div id="details-modal" class="modal">
         <div class="popup-inner details-modal-content">
             <h2>Detalles de la prenda</h2>
@@ -124,6 +125,7 @@ if (!isset($_SESSION['usuario'])) {
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
                     <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
                     <input type="text" id="temporada" name="temporada" placeholder="Temporada">
+                    <input type="text" id="categoria" name="categoria" placeholder="Categoria">
                     <input type="text" id="color" name="color" placeholder="Color">
                 </div>
             </div>
@@ -133,6 +135,7 @@ if (!isset($_SESSION['usuario'])) {
             </div>
         </div>
     </div>
+    </form>
     <!-- Modal para confirmación de registro completado -->
     <div id="confirmation-modal" class="modal">
         <div class="popup-inner details-modal-content">
