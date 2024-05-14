@@ -24,13 +24,19 @@ $descripcion = $_POST['descripcion'];
 $temporada = $_POST['temporada'];
 $categoria = $_POST['categoria'];
 $color = $_POST['color'];
-$imagen = $_FILES['file-upload']['tmp_name'];
-$imagen_contenido = addslashes(file_get_contents($imagen));
+
+// Procesar la carga de la imagen
+if (isset($_FILES['file-upload']) && $_FILES['file-upload']['error'] == 0) {
+    $archivoTemp = $_FILES['file-upload']['tmp_name'];
+    $fotoropa = file_get_contents($archivoTemp);
+} else {
+    die("Error al cargar la imagen.");
+}
 
 // Prepara la consulta SQL para insertar la prenda
 $sql = "INSERT INTO ropa (nombre, descripcion, color, fotoropa, id_categoria, id_tipo_ropa, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssssss", $nombre, $descripcion, $color, $imagen_contenido, $categoria, $temporada, $id_usuario);
+$stmt->bind_param("sssssss", $nombre, $descripcion, $color, $fotoropa, $categoria, $temporada, $id_usuario);
 
 // Ejecuta la consulta
 if ($stmt->execute()) {
