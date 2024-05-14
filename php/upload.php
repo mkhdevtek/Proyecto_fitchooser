@@ -7,6 +7,17 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: ./index.html");
     exit();
 }
+
+// Obtener el id del usuario a partir del correo almacenado en la sesión
+$correo_usuario = $_SESSION['usuario'];
+$sql_usuario = "SELECT id FROM Usuario WHERE correo = ?";
+$stmt_usuario = $conn->prepare($sql_usuario);
+$stmt_usuario->bind_param("s", $correo_usuario);
+$stmt_usuario->execute();
+$resultado_usuario = $stmt_usuario->get_result();
+$fila_usuario = $resultado_usuario->fetch_assoc();
+$id_usuario = $fila_usuario['id'];
+
 // Recibe los datos del formulario
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
@@ -16,10 +27,10 @@ $color = $_POST['color'];
 $imagen = $_FILES['file-upload']['tmp_name'];
 $imagen_contenido = addslashes(file_get_contents($imagen));
 
-// Prepara la consulta SQL
-$sql = "INSERT INTO ropa (nombre, descripcion, color, fotoropa, id_categoria) VALUES (?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($sql); // Utiliza la conexión establecida en conexion.php
-$stmt->bind_param("sssss", $nombre, $descripcion, $color, $imagen_contenido, $categoria);
+// Prepara la consulta SQL para insertar la prenda
+$sql = "INSERT INTO ropa (nombre, descripcion, color, fotoropa, id_categoria, id_tipo_ropa, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sssssss", $nombre, $descripcion, $color, $imagen_contenido, $categoria, $temporada, $id_usuario);
 
 // Ejecuta la consulta
 if ($stmt->execute()) {
@@ -30,5 +41,6 @@ if ($stmt->execute()) {
 
 // Cierra la conexión
 $stmt->close();
+$stmt_usuario->close();
 $conn->close();
 ?>
