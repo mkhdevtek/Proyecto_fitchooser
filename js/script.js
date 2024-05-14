@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var imagePreview = document.getElementById('image-preview');
     var detailImagePreview = document.getElementById('detail-image-preview');
     var detailsModal = document.getElementById('details-modal');
-    var uploadArea = document.querySelector('.upload-area'); // Selecciona el área de carga
+    var uploadArea = document.querySelector('.upload-area');
 
+    // Selecciona el área de carga
     fileUpload.addEventListener('change', function(event) {
         handleFiles(event.target.files);
     });
@@ -24,18 +25,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function handleFiles(files) {
         var reader = new FileReader();
-
         reader.onload = function(e) {
             imagePreview.src = e.target.result;
-            imagePreview.style.display = 'block';
-
-            // Muestra la misma imagen en el formulario de detalles
-            detailImagePreview.src = e.target.result;
-
-            // Muestra el formulario de detalles
+            imagePreview.style.display = 'block'; // Muestra la misma imagen en el formulario de detalles
+            detailImagePreview.src = e.target.result; // Muestra el formulario de detalles
             detailsModal.style.display = 'flex';
         }
-
         reader.readAsDataURL(files[0]);
     }
 
@@ -48,10 +43,36 @@ document.addEventListener("DOMContentLoaded", function() {
     // Manejador de evento para el botón 'Agregar'
     var submitButton = document.querySelector('.submit-button');
     submitButton.addEventListener('click', function() {
-        // Ocultar modal de detalles de la prenda
-        detailsModal.style.display = 'none';
-        // Mostrar modal de confirmación
-        document.getElementById('confirmation-modal').style.display = 'flex';
+        const nombre = document.getElementById('nombre').value;
+        const descripcion = document.getElementById('descripcion').value;
+        const temporada = document.getElementById('temporada').value;
+        const categoria = document.getElementById('categoria').value;
+        const color = document.getElementById('color').value;
+        const imagen = document.getElementById('file-upload').files[0];
+
+        const formData = new FormData();
+        formData.append('nombre', nombre);
+        formData.append('descripcion', descripcion);
+        formData.append('temporada', temporada);
+        formData.append('categoria', categoria);
+        formData.append('color', color);
+        formData.append('file-upload', imagen);
+
+        fetch('php/upload.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                // Ocultar modal de detalles de la prenda
+                detailsModal.style.display = 'none';
+                // Mostrar modal de confirmación
+                document.getElementById('confirmation-modal').style.display = 'flex';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     });
 
     // Opcional: Manejador de evento para el botón 'Cerrar' de la ventana modal de confirmación
@@ -61,6 +82,4 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById('confirmation-modal').style.display = 'none';
         window.location.href = './dashboard.php';
     });
-
-
 });

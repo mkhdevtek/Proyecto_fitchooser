@@ -96,60 +96,56 @@ if (!isset($_SESSION['usuario'])) {
     </section>
     <!-- Popup Upload Modal -->
     <div id="popup-upload" class="modal">
-      <div class="popup-inner upload-modal-content">
-        <a href="#" class="close-button">X</a>
-        <div class="upload-icon">
-          <img src="./img/logo.png" alt="Upload Icon" />
-        </div>
-        <!-- Recuadro punteado para arrastrar las imágenes -->
-        <div class="upload-area">
-          <img id="image-preview" style="display:none;" alt="Vista previa de la imagen" />
-          <input type="file" name="files" id="file-upload" accept="image/*" multiple class="upload-input">
-          <div class="upload-instructions">
-            <p>Arrastra la foto a este recuadro</p>
-          </div>
-        </div>
-        <label for="file-upload" class="upload-button">Subir Foto</label> <!-- Movido fuera de upload-area -->
-      </div>
-    </div>
-    <!-- Modal para los detalles de la prenda subida -->
-    <form id="details-form" action="php/upload.php" method="POST" enctype="multipart/form-data">
-        <div id="details-modal" class="modal">
-            <div class="popup-inner details-modal-content">
-                <a href="#" class="close-button">X</a>
-                <h2>Detalles de la prenda</h2>
-                <div class="form-field">
-                    <div class="imagen-form">
-                        <input type="file" name="image" id="file-upload" accept="image/*" class="upload-input">
-                        <img id="image-preview" style="display:none;" alt="Vista previa de la imagen" />
+        <div class="popup-inner upload-modal-content">
+            <a href="#" class="close-button">X</a>
+            <div class="upload-icon">
+                <img src="./img/logo.png" alt="Upload Icon" />
+            </div>
+            <!-- Recuadro punteado para arrastrar las imágenes -->
+            <div class="upload-area">
+                <img id="image-preview" style="display:none;" alt="Vista previa de la imagen" />
+                    <input type="file" name="file-upload" id="file-upload" accept="image/*" multiple class="upload-input">
+                    <div class="upload-instructions">
+                        <p>Arrastra la foto a este recuadro</p>
                     </div>
-                    <div class="form-detalles">
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda" required>
-                        <input type="text" id="descripcion" name="descripcion" placeholder="Descripción de la prenda" required>
-                        <input type="text" id="temporada" name="temporada" placeholder="Temporada" required>
-                        <input type="text" id="color" name="color" placeholder="Color" required>
-                    </div>
-                </div>
-                <div class="form-buttons">
-                    <button type="button" class="cancel-button">Cancelar</button>
-                    <button type="submit" class="submit-button">Agregar</button>
-                </div>
+                    <label for="file-upload" class="upload-button">Subir Foto</label>
             </div>
         </div>
-    </form>
-
+    </div>
+    <!-- Modal para los detalles de la prenda subida -->
+    <div id="details-modal" class="modal">
+        <div class="popup-inner details-modal-content">
+            <h2>Detalles de la prenda</h2>
+            <div class="form-field">
+                <div class="imagen-form">
+                    <img id="detail-image-preview" alt="Vista previa de la prenda" />
+                </div>
+                <div class="form-detalles">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
+                    <input type="text" id="temporada" name="temporada" placeholder="Temporada">
+                    <input type="text" id="categoria" name="categoria" placeholder="Categoria">
+                    <input type="text" id="color" name="color" placeholder="Color">
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button class="cancel-button">Cancelar</button>
+                <button class="submit-button">Agregar</button>
+            </div>
+        </div>
+    </div>
     <!-- Modal para confirmación de registro completado -->
     <div id="confirmation-modal" class="modal">
-      <div class="popup-inner details-modal-content">
-        <h2>Registro completado</h2>
-        <p>Tu prenda ha sido agregada con éxito.</p>
-        <div class="checkmark-circle">
-          <div class="checkmark"></div>
+        <div class="popup-inner details-modal-content">
+            <h2>Registro completado</h2>
+            <p>Tu prenda ha sido agregada con éxito.</p>
+            <div class="checkmark-circle">
+                <div class="checkmark"></div>
+            </div>
+            <div class="form-buttons2">
+                <button class="close-button2">Cerrar</button>
+            </div>
         </div>
-        <div class="form-buttons2">
-          <button class="close-button2">Cerrar</button>
-        </div>
-      </div>
     </div>
     <footer>
       <p>Fit Chooser 2021 ©</p>
