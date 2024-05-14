@@ -17,7 +17,6 @@ if (!isset($_SESSION['usuario'])) {
       href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Imperial+Script&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="css/dashboard.css" />
     <title>Dashboard</title>
   </head>
