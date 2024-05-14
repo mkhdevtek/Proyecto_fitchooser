@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Ropa</title>
+</head>
+<body>
+<form action="php/pru.php" method="post" enctype="multipart/form-data">
+    <input type="text" name="nombre" placeholder="Nombre de la prenda" required>
+    <textarea name="descripcion" placeholder="Descripción de la prenda"></textarea>
+    <input type="text" name="color" placeholder="Color de la prenda">
+    <input type="number" name="id_usuario" placeholder="ID de Usuario" required>
+    <input type="number" name="id_tipo_ropa" placeholder="ID Tipo de Ropa" required>
+    <input type="number" name="id_categoria" placeholder="ID Categoría" required>
+    <input type="file" name="fotoropa" required>
+    <button type="submit">Registrar Ropa</button>
+</form>
+</body>
+</html>
