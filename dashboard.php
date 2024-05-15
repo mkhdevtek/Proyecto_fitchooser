@@ -122,7 +122,7 @@ if (!isset($_SESSION['usuario'])) {
                 <div class="form-detalles">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
                     <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
-                    <input type="text" id="temporada" name="temporada" placeholder="Temporada">
+                    <input type="text" id="temporada" name="temporada" placeholder="Tipo de ropa">
                     <input type="text" id="categoria" name="categoria" placeholder="Categoria">
                     <input type="text" id="color" name="color" placeholder="Color">
                 </div>
