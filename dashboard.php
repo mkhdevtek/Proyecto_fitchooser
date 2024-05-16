@@ -128,7 +128,7 @@ $conn->close();
             <div class="card hoddies">
                 <?php if (!empty($hoddies)): ?>
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($hoddies[0]['fotoropa']); ?>" alt="Hoddie" />
-                    <h3><?php echo $hoddies[0]['nombre']; ?></h3>
+                    <h3></h3>
                 <?php else: ?>
                     <p>No hay hoddies registradas</p>
                 <?php endif; ?>
@@ -137,7 +137,7 @@ $conn->close();
             <div class="card camisas">
                 <?php if (!empty($camisas)): ?>
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($camisas[0]['fotoropa']); ?>" alt="Camisa" />
-                    <h3><?php echo $camisas[0]['nombre']; ?></h3>
+                    <h3></h3>
                 <?php else: ?>
                     <p>No hay camisas registradas</p>
                 <?php endif; ?>
@@ -146,7 +146,7 @@ $conn->close();
             <div class="card pantalon">
                 <?php if (!empty($pantalones)): ?>
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($pantalones[0]['fotoropa']); ?>" alt="Pantalón" />
-                    <h3><?php echo $pantalones[0]['nombre']; ?></h3>
+                    <h3></h3>
                 <?php else: ?>
                     <p>No hay pantalones registrados</p>
                 <?php endif; ?>
@@ -155,7 +155,7 @@ $conn->close();
             <div class="card gorra">
                 <?php if (!empty($gorras)): ?>
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($gorras[0]['fotoropa']); ?>" alt="Gorra" />
-                    <h3><?php echo $gorras[0]['nombre']; ?></h3>
+                    <h3></h3>
                 <?php else: ?>
                     <p>No hay gorras registradas</p>
                 <?php endif; ?>
