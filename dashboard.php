@@ -4,6 +4,7 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: ./index.html");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -149,7 +150,6 @@ if (!isset($_SESSION['usuario'])) {
     <footer>
       <p>Fit Chooser 2021 ©</p>
     </footer>
-    <div id="user-email" style="display: none;"><?php echo $_SESSION['usuario']; ?></div>
     <script src="./js/script.js"></script>
     <script src="./js/generate_outfit.js"></script>
   </body>
