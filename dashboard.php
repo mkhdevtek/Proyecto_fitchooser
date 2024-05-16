@@ -219,6 +219,6 @@ $conn->close();
       <p>Fit Chooser 2021 ©</p>
     </footer>
     <script src="./js/script.js"></script>
-    <script src="./js/generate_outfit.js"></script>
+    <script src="./js/prendaAlt.js"></script>
   </body>
 </html>
