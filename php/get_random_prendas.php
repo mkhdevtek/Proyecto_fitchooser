@@ -56,9 +56,10 @@ $conn->close();
 
 // Devolver los datos en formato JSON
 header('Content-Type: application/json');
-echo json_encode(array(
-    'hoddie' => $hoddie,
-    'camisa' => $camisa,
-    'pantalon' => $pantalon,
-    'gorra' => $gorra
-));
+//echo json_encode(array(
+//    'hoddie' => $hoddie,
+//    'camisa' => $camisa,
+//    'pantalon' => $pantalon,
+//    'gorra' => $gorra
+//));
+echo json_decode(json_encode(array ($hoddie)), JSON_PRETTY_PRINT). 'jhlkjhlk';

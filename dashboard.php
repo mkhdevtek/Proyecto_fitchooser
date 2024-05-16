@@ -116,7 +116,7 @@ $conn->close();
       <nav>
         <ul>
           <li>
-            <a href="#" class="icon gen"></a>
+            <a href="php/get_random_prendas.php" class="icon gen" ></a>
           </li>
           <li><a href="#popup-upload" class="icon add"></a></li>
           <li>
