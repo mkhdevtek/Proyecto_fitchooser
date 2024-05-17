@@ -90,7 +90,7 @@ section {
   color: var(--erieblack);
 }
 
-section article {
+>>>>>>>Stashed changes section article {
   --height: 55vh;
 
   display: flex;
@@ -283,17 +283,17 @@ section ul li a {
 }
 .popup-inner {
   position: relative;
-  background: var(--erieblack);
+  background: var(--isabelline);
   padding: 1em 2em;
   border-radius: 40px;
   height: 70dvh;
 }
 
-.modal:target {
+>>>>>>>Stashed changes .modal:target {
   display: flex;
 }
 
-footer {
+>>>>>>>Stashed changes footer {
   display: flex;
   justify-content: center;
   align-items: center;
