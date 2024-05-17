@@ -85,13 +85,9 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70dvh;
+  height: 70vh;
   width: 100%;
   color: var(--erieblack);
-}
-
-section nav ul{
-  margin: 0 auto;
 }
 
 section article {
@@ -293,52 +289,20 @@ section ul li a {
   height: 70dvh;
 }
 
-.popup-form{
-  margin: 50px auto 0 auto;
-  width: 90%;
-  height: 70%;
-}
-
 .modal:target {
   display: flex;
-}
-
-.close{
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  width:  40px;
-  height: 40px;
-  background-color: var(--red);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-  color: var(--isabelline);
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 1.5em;
-}
-
-.close:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-  box-shadow: 0 0 30px -10px var(--erieblack);
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10dvh;
+  height: 10vh;
   background: var(--lasuli);
   color: var(--isabelline);
   border-radius: 30px 30px 0 0;
 }
 
-<<<<<<< Updated upstream
-=======
 /*ESTILOS DE Recuadro punteado para arrastrar las imágenes*/
 /* CSS DE FER */
 .upload-section {
@@ -580,48 +544,37 @@ footer {
 }
 
 /* Estilos base para los botones */
-.form-buttons button {
-  padding: 0.75em 1.5em; /* Espaciado interno */
-  border-radius: 20px; /* Bordes redondeados */
-  margin: 0 0.5em; /* Separación entre botones */
-  font-size: 1em; /* Tamaño de la fuente */
-  cursor: pointer; /* Cambia el cursor a una mano para indicar que es clickeable */
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-  background-color: var(--erieblack); /* Color de fondo inicial */
-  color: var(--isabelline); /* Color del texto */
-  border: none; /* Sin bordes */
+
+/* Estilos para el botón de cancelar reutilizando la clase para consistencia visual */
+/* Estilos para el contenedor de los botones */
+.form-buttons {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  align-items: center; /* Alinea los botones verticalmente */
+  gap: 20px; /* Espacio entre los botones */
+  padding: 1em 0; /* Espacio arriba y abajo dentro del contenedor */
 }
 
-/* Efectos al pasar el ratón sobre los botones */
-.form-buttons button:hover {
-  background-color: var(--red); /* Cambia el color de fondo */
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar sensación de elevación */
-}
-
-/* Estilos específicos para el botón de cancelar */
-.cancel-button {
-  background-color: var(--gray); /* Color de fondo más claro */
-}
-
-.cancel-button:hover {
-  background-color: var(--red); /* Color de fondo al hacer hover */
-}
-
-/* Estilos específicos para el botón de agregar */
-.submit-button {
-  background-color: var(--lasuli); /* Color de fondo distintivo */
-}
-
-.submit-button:hover {
-  background-color: var(--red); /* Color de fondo al hacer hover */
-}
+/* Estilos específicos para cada botón */
 .cancel-button,
 .submit-button {
-  margin: 0 10px; /* Añade un margen horizontal para asegurar espacio entre los botones */
-  text-align: center; /* Asegura que el texto dentro del botón esté centrado */
-  padding: 0.75em 1.5em; /* Ajusta el relleno según sea necesario */
+  display: inline-block;
+  z-index: 10;
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 0.75em 1.5em; /* Reducción del padding para hacer el botón más pequeño */
   font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Añadimos hover para ambos botones */
+.cancel-button:hover,
+.submit-button:hover {
+  background-color: var(--gray); /* Cambio de color al hacer hover */
 }
 
 /*REISTRO EXITOSO*/
@@ -670,7 +623,6 @@ footer {
 }
 
 /* CAMBIOS DE OBED */
->>>>>>> Stashed changes
 @media (max-width: 1000px) {
   section {
     height: 200%;
@@ -683,16 +635,13 @@ footer {
     width: 45%;
     margin: 0.5em 0;
   }
-<<<<<<< Updated upstream
-}
-=======
 }
 /* FIN CAMBIOS OBED*/
 
 .checkmark-circle {
-  width: 100px; /* Tamaño más grande del círculo */
-  height: 100px; /* Tamaño más grande del círculo */
-  background-color: #4caf50; /* Mantén el color verde o elige otro si lo deseas */
+  width: 100px; /* Tamaño del círculo */
+  height: 100px; /* Tamaño del círculo */
+  background-color: #4caf50; /* Color del círculo */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -701,52 +650,55 @@ footer {
 }
 
 .checkmark {
-  width: 12px; /* Ancho de la palomita */
-  height: 40px; /* Altura de la palomita */
-  border-radius: 2px; /* Radio del borde más pequeño para suavizar los bordes */
-  transform: rotate(45deg); /* Mantiene la inclinación */
+  width: 12px;
+  height: 40px;
+  border-radius: 2px;
   position: relative;
-  left: 10px; /* Ajusta para centrar horizontalmente dentro del círculo */
-  top: 0; /* Ajusta para centrar verticalmente si es necesario */
+  left: 50%; /* Centro el elemento en la mitad del círculo horizontalmente */
+  top: 50%; /* Centro el elemento en la mitad del círculo verticalmente */
+  transform: translate(-220%, -150%) rotate(45deg); /* Ajusta la posición correctamente */
 }
 
 .checkmark:before {
   content: "";
   position: absolute;
   background-color: white;
-  width: 12px; /* Ancho del palo vertical de la palomita */
-  height: 25px; /* Altura del palo vertical de la palomita */
-  left: 0; /* Posición relativa al centro del 'checkmark' */
+  width: 12px;
+  height: 25px;
+  left: 0;
   top: 15px; /* Ajusta para que la intersección sea en el punto correcto */
-  animation: checkmark-expand 0.3s ease forwards;
+  animation: checkmark-expand-vertical 0.2s ease forwards; /* Animación vertical primero */
 }
 
 .checkmark:after {
   content: "";
   position: absolute;
   background-color: white;
-  width: 25px; /* Ancho del palo horizontal de la palomita */
-  height: 12px; /* Altura del palo horizontal de la palomita */
+  width: 25px;
+  height: 12px;
   left: -13px; /* Ajusta para que se extienda hacia la izquierda desde la intersección */
-  top: 12px; /* Posición vertical para que alinee con el vertical */
-  animation: checkmark-expand 0.3s ease forwards 0.3s;
+  top: 55px; /* Posición vertical para que alinee con el vertical */
+  animation: checkmark-expand-horizontal 0.2s ease forwards 0.2s; /* Espera la finalización de la primera animación */
 }
 
-.checkmark:before,
-.checkmark:after {
-  content: "";
-  position: absolute;
-  background-color: white;
-}
-
-@keyframes checkmark-expand {
+@keyframes checkmark-expand-vertical {
   0% {
+    height: 0; /* Inicia sin altura */
     opacity: 0;
-    transform: scale(0);
   }
   100% {
+    height: 45px; /* Expande a la altura completa */
     opacity: 1;
-    transform: scale(1);
   }
 }
->>>>>>> Stashed changes
+
+@keyframes checkmark-expand-horizontal {
+  0% {
+    width: 0; /* Inicia sin ancho */
+    opacity: 0;
+  }
+  100% {
+    width: 25px; /* Expande al ancho completo */
+    opacity: 1;
+  }
+}
