@@ -187,9 +187,21 @@ $conn->close();
                 </div>
                 <div class="form-detalles">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
-                    <input type="text" id="temporada" name="temporada" placeholder="Tipo de ropa">
-                    <input type="text" id="categoria" name="categoria" placeholder="Categoria">
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripción de la prenda">
+                    <!-- Menú desplegable para temporada -->
+                    <select id="temporada" name="temporada">
+                        <option value="1">Hoddie</option>
+                        <option value="2">Camisa</option>
+                        <option value="3">Pantalon</option>
+                        <option value="4">Gorra</option>
+                    </select>
+                    <!-- Menú desplegable para categoría -->
+                    <select id="categoria" name="categoria">
+                        <option value="1">Casual</option>
+                        <option value="2">Formal</option>
+                        <option value="3">Deportiva</option>
+                        <option value="4">Business casual</option>
+                    </select>
                     <input type="text" id="color" name="color" placeholder="Color">
                 </div>
             </div>

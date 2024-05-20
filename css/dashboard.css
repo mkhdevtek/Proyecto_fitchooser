@@ -702,3 +702,37 @@ section ul li a {
     opacity: 1;
   }
 }
+/* Estilo para todos los campos de entrada y selecciones del formulario */
+.form-detalles input,
+.form-detalles select {
+  width: 90%; /* Controla el ancho del campo */
+  padding: 0.8em; /* Añade un relleno para hacer más fácil la escritura */
+  margin-top: 1em; /* Espacio entre los campos */
+  border: none; /* Remueve el borde predeterminado */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: var(--isabelline); /* Color de fondo claro */
+  color: var(--erieblack); /* Color del texto */
+  font-family: 'IM Fell English SC', serif; /* Tipo de letra del tema */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra ligera para profundidad */
+}
+
+.form-detalles select {
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+}
+
+/* Estilo para los botones del formulario */
+.form-buttons button {
+  background-color: var(--red); /* Color de fondo para el botón */
+  color: var(--isabelline); /* Color del texto */
+  border: none; /* Sin bordes */
+  padding: 0.8em 2em; /* Padding generoso para facilidad de clic */
+  font-size: 1em; /* Tamaño de letra adecuado */
+  font-family: 'IM Fell English SC', serif; /* Tipo de letra del tema */
+  border-radius: 20px; /* Bordes redondeados */
+  cursor: pointer; /* Indica que el botón es clickeable */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.form-buttons button:hover {
+  background-color: var(--gray); /* Cambio de color al pasar el cursor */
+}
