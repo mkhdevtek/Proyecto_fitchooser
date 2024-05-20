@@ -116,7 +116,7 @@ $conn->close();
       <nav>
         <ul>
           <li>
-            <a href="#" class="icon gen" ></a>
+            <a href="php/get_random_prendas.php" class="icon gen" ></a>
           </li>
           <li><a href="#popup-upload" class="icon add"></a></li>
           <li>
@@ -125,38 +125,30 @@ $conn->close();
         </ul>
       </nav>
         <article>
-            <div class="card hoddies">
-                <?php if (!empty($hoddies)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($hoddies[0]['fotoropa']); ?>" alt="Hoddie" />
-                    <h3><?php echo $hoddies[0]['nombre']; ?></h3>
-                <?php else: ?>
-                    <p>No hay hoddies registradas</p>
-                <?php endif; ?>
-            </div>
-            <div class="card camisas">
-                <?php if (!empty($camisas)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($camisas[0]['fotoropa']); ?>" alt="Camisa" />
-                    <h3><?php echo $camisas[0]['nombre']; ?></h3>
-                <?php else: ?>
-                    <p>No hay camisas registradas</p>
-                <?php endif; ?>
-            </div>
-            <div class="card pantalon">
-                <?php if (!empty($pantalones)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($pantalones[0]['fotoropa']); ?>" alt="Pantalón" />
-                    <h3><?php echo $pantalones[0]['nombre']; ?></h3>
-                <?php else: ?>
-                    <p>No hay pantalones registrados</p>
-                <?php endif; ?>
-            </div>
-            <div class="card gorra">
-                <?php if (!empty($gorras)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($gorras[0]['fotoropa']); ?>" alt="Gorra" />
-                    <h3><?php echo $gorras[0]['nombre']; ?></h3>
-                <?php else: ?>
-                    <p>No hay gorras registradas</p>
-                <?php endif; ?>
-            </div>
+            <?php if (isset($_SESSION['hoddie'])): ?>
+                <div class="card hoddies">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['hoddie']['fotoropa']) ?>" alt="Hoddie" />
+                    <h3><?= $_SESSION['hoddie']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['camisa'])): ?>
+                <div class="card camisas">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['camisa']['fotoropa']) ?>" alt="Camisa" />
+                    <h3><?= $_SESSION['camisa']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['pantalon'])): ?>
+                <div class="card pantalon">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['pantalon']['fotoropa']) ?>" alt="Pantalon" />
+                    <h3><?= $_SESSION['pantalon']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['gorra'])): ?>
+                <div class="card gorra">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['gorra']['fotoropa']) ?>" alt="Gorra" />
+                    <h3><?= $_SESSION['gorra']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
         </article>
     </section>
     <!-- Popup Upload Modal -->
@@ -228,6 +220,5 @@ $conn->close();
       <p>Fit Chooser 2021 ©</p>
     </footer>
     <script src="./js/script.js"></script>
-    <script src="./js/prendaAlt.js"></script>
   </body>
 </html>
