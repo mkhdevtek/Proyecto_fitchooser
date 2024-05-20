@@ -194,7 +194,21 @@ $conn->close();
                         <option value="3">Deportiva</option>
                         <option value="4">Business casual</option>
                     </select>
-                    <input type="text" id="color" name="color" placeholder="Color">
+                    <!-- Menú desplegable para colores -->
+                    <select id="color" name="color">
+                        <option value="azul_marino">Azul marino</option>
+                        <option value="gris">Gris</option>
+                        <option value="negro">Negro</option>
+                        <option value="beige">Beige</option>
+                        <option value="caqui">Caqui</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="azul_celeste">Azul celeste</option>
+                        <option value="verde_oliva">Verde oliva</option>
+                        <option value="burdeos">Burdeos</option>
+                        <option value="marron">Marrón</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="morado">Morado</option>
+                    </select>
                 </div>
             </div>
             <div class="form-buttons">
