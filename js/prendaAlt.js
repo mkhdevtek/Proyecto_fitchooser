@@ -4,7 +4,7 @@ const genButton = document.querySelector('.icon.gen');
 // Agrega un evento de clic al botón
 genButton.addEventListener('click', () => {
     // Realizar una solicitud AJAX para obtener nuevas prendas aleatorias
-    /*fetch('php/get_random_prendas.php')
+    fetch('php/get_random_prendas.php')
         .then(response => response.json())
         .then(data => {
             // Actualizar las cards con las nuevas prendas
@@ -12,8 +12,8 @@ genButton.addEventListener('click', () => {
         })
         .catch(error => {
             console.error('Error al obtener prendas aleatorias:', error);
-        });*/
-    window.location.href="php/get_random_prendas.php";
+        });
+    ///window.location.href="php/get_random_prendas.php";
 });
 
 // Función para actualizar las cards con las nuevas prendas

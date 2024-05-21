@@ -125,41 +125,30 @@ $conn->close();
         </ul>
       </nav>
         <article>
-            <div class="card hoddies">
-                <?php if (!empty($hoddies)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($hoddies[0]['fotoropa']); ?>" alt="Hoddie" />
-                    <h3></h3>
-                <?php else: ?>
-                    <p>No hay hoddies registradas</p>
-                <?php endif; ?>
-            </div>
-
-            <div class="card camisas">
-                <?php if (!empty($camisas)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($camisas[0]['fotoropa']); ?>" alt="Camisa" />
-                    <h3></h3>
-                <?php else: ?>
-                    <p>No hay camisas registradas</p>
-                <?php endif; ?>
-            </div>
-
-            <div class="card pantalon">
-                <?php if (!empty($pantalones)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($pantalones[0]['fotoropa']); ?>" alt="Pantalón" />
-                    <h3></h3>
-                <?php else: ?>
-                    <p>No hay pantalones registrados</p>
-                <?php endif; ?>
-            </div>
-
-            <div class="card gorra">
-                <?php if (!empty($gorras)): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($gorras[0]['fotoropa']); ?>" alt="Gorra" />
-                    <h3></h3>
-                <?php else: ?>
-                    <p>No hay gorras registradas</p>
-                <?php endif; ?>
-            </div>
+            <?php if (isset($_SESSION['hoddie'])): ?>
+                <div class="card hoddies">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['hoddie']['fotoropa']) ?>" alt="Hoddie" />
+                    <h3><?= $_SESSION['hoddie']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['camisa'])): ?>
+                <div class="card camisas">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['camisa']['fotoropa']) ?>" alt="Camisa" />
+                    <h3><?= $_SESSION['camisa']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['pantalon'])): ?>
+                <div class="card pantalon">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['pantalon']['fotoropa']) ?>" alt="Pantalon" />
+                    <h3><?= $_SESSION['pantalon']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['gorra'])): ?>
+                <div class="card gorra">
+                    <img src="data:image/jpeg;base64,<?= base64_encode($_SESSION['gorra']['fotoropa']) ?>" alt="Gorra" />
+                    <h3><?= $_SESSION['gorra']['nombre'] ?></h3>
+                </div>
+            <?php endif; ?>
         </article>
     </section>
     <!-- Popup Upload Modal -->
@@ -190,10 +179,36 @@ $conn->close();
                 </div>
                 <div class="form-detalles">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
-                    <input type="text" id="temporada" name="temporada" placeholder="Tipo de ropa">
-                    <input type="text" id="categoria" name="categoria" placeholder="Categoria">
-                    <input type="text" id="color" name="color" placeholder="Color">
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripción de la prenda">
+                    <!-- Menú desplegable para temporada -->
+                    <select id="temporada" name="temporada">
+                        <option value="1">Hoddie</option>
+                        <option value="2">Camisa</option>
+                        <option value="3">Pantalon</option>
+                        <option value="4">Gorra</option>
+                    </select>
+                    <!-- Menú desplegable para categoría -->
+                    <select id="categoria" name="categoria">
+                        <option value="1">Casual</option>
+                        <option value="2">Formal</option>
+                        <option value="3">Deportiva</option>
+                        <option value="4">Business casual</option>
+                    </select>
+                    <!-- Menú desplegable para colores -->
+                    <select id="color" name="color">
+                        <option value="azul_marino">Azul marino</option>
+                        <option value="gris">Gris</option>
+                        <option value="negro">Negro</option>
+                        <option value="beige">Beige</option>
+                        <option value="caqui">Caqui</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="azul_celeste">Azul celeste</option>
+                        <option value="verde_oliva">Verde oliva</option>
+                        <option value="burdeos">Burdeos</option>
+                        <option value="marron">Marrón</option>
+                        <option value="rojo">Rojo</option>
+                        <option value="morado">Morado</option>
+                    </select>
                 </div>
             </div>
             <div class="form-buttons">
@@ -219,6 +234,5 @@ $conn->close();
       <p>Fit Chooser 2021 ©</p>
     </footer>
     <script src="./js/script.js"></script>
-    <script src="./js/prendaAlt.js"></script>
   </body>
 </html>
