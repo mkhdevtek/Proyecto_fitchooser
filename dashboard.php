@@ -29,39 +29,13 @@ if (!isset($_SESSION['usuario'])) {
           ><h1>Fit Chooser</h1></a>
       </div>
       <h2>Stay Cool</h2>
-      <div>
-        <a href="php/logout.php" style="text-decoration: none; color: white; background-color: red; padding: 10px 20px; border-radius: 5px; font-size: 16px;">Cerrar Sesión</a>
-      </div>
     </header>
-
+<!--
     <div class="filter">
-      <a href="#popup-filter" style="text-decoration: none"><h3>Filtra</h3> </a>
-    </div>
+      <a href="php/logout.php" style="text-decoration: none"><img src="../img/cerrar-sesion.png" alt="cerrar sesion"></a>
+    </div> -->
 
-    <div id="popup-filter" class="modal">
-      <div class="popup-inner">
-        <div class="popup-form">
-          <h2>Selecciona tu estilo</h2>
-          <form action="dashboard.php">
-            <input type="checkbox" name="hoddies" id="hoddies" />
-            <label for="hoddies">Modo Guerra</label>
-            <input type="checkbox" name="camisas" id="camisas" />
-            <label for="camisas">Modo Setso</label>
-            <input type="checkbox" name="pantalon" id="pantalon" />
-            <label for="pantalon">Modo Agresivo</label>
-            <input type="checkbox" name="gorra" id="gorra" />
-            <label for="gorra">Modo Muerte</label>
-            <input
-              type="submit"
-              name="filter-button"
-              id="filter-button"
-              value="Filtrar"
-            />
-          </form>
-        </div>
-        <a href="#" class="close">X</a>
-      </div>
-    </div>
+
 
     <section>
       <nav>
@@ -94,6 +68,9 @@ if (!isset($_SESSION['usuario'])) {
         </div>
       </article>
     </section>
+    <div class="cerrar-sesion">
+      <a href="php/logout.php"><button></button></a>
+    </div>
     <!-- Popup Upload Modal -->
     <div id="popup-upload" class="modal">
       <div class="popup-inner upload-modal-content">
