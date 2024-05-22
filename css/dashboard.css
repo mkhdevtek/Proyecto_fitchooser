@@ -241,17 +241,7 @@ section ul li a {
   color: var(--erieblack);
 }
 
-.filter{
-  position: absolute;
-  right: 50px;
-  width:  90px;
-  height: 90px;
-  background-color: var(--red);
-  border-radius: 50%;
-  margin: -0.7em;
-  transition: all 0.3s ease;
-  z-index: 100;
-}
+
 
 .filter:hover{
   cursor: pointer;
@@ -259,17 +249,7 @@ section ul li a {
   box-shadow: 0 0 30px -10px var(--erieblack);
 }
 
-.filter h3{
-  font-size: 1.5em;
-  font-family: "IM Fell English SC", serif;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--isabelline);
-  margin: 0 0 0.5em 0;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
+
 
 .modal {
   position: fixed;
@@ -704,6 +684,28 @@ footer {
     opacity: 1;
   }
 }
+/*<<<<<<< rama-Oscar*/
+.cerrar-sesion button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  margin-left: 65px;
+  margin-bottom: 20px;
+  background-image: url("../img/cerrar-sesion.png");
+  background-color: var(--red);
+  background-position: 50% 50%;
+  background-size: 36px;
+  background-repeat: no-repeat;
+  border: none;
+}
+.cerrar-sesion button:hover{
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+/*=======*/
 /* Estilo para todos los campos de entrada y selecciones del formulario */
 .form-detalles input,
 .form-detalles select {
@@ -738,3 +740,4 @@ footer {
 .form-buttons button:hover {
   background-color: var(--gray); /* Cambio de color al pasar el cursor */
 }
+/*>>>>>>> main*/

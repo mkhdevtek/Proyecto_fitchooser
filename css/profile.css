@@ -1,7 +1,7 @@
 :root {
   --lasuli: #416788;
   --erieblack: #1e1e1e;
-  --erieblack_alpha: rgba(30, 30, 30, 0.544)e;
+  --erieblack_alpha: rgba(30, 30, 30, 0.544);
   --isabelline: #F5F0EE;
   --isabelline_alpha: #f5fdeea4;
   --red: #fd9696;
@@ -79,6 +79,35 @@ header h2 {
   margin-top: -55px;
 }
 
+/* empieza la parte de datos del perfil*/
+.perfil {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 162px;
+}
+.perfil img {
+  height: 150px;
+  width: 125px;
+}
+.datos {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+.foto {
+  margin-left: 60px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray);
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+  display: grid;
+}
+  
 section {
   display: flex;
   flex-direction: column;
@@ -87,6 +116,65 @@ section {
   height: auto;
   width: 100%;
   color: var(--erieblack);
+}
+
+#editar {
+  font-size: 1.2em;
+  margin: 40px;
+  margin-left: 43%;
+  background-color: var(--red);
+  color: black;
+  border: none;
+  height: 50px;
+  width: 200px;
+  border-radius: 35px;
+}
+#editar:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+label {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+/* empieza sección de prendas agregadas */
+.botones {
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.botones button {
+  height: 70px;
+  width: 70px;
+  background-color: var(--red);
+  border: none;
+  border-radius: 50px;
+}
+.botones button:hover {
+  cursor: pointer;
+  background-color: var(--red);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+.botones h2 {
+  font-size: 2.5em;
+}
+.botones #add {
+  background-image: url("../img/add_black.png");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.botones #delete {
+  background-image: url("../img/basura.png");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .profile {
@@ -102,6 +190,13 @@ section {
   border-bottom: 2px solid var(--lasuli);
 }
 
+.card {
+  margin-top: 50px;
+  width: 300px;
+  height: 400px;
+  background-color: black;
+}
+
 .profile-img {
   display: flex;
   justify-content: center;
@@ -111,6 +206,27 @@ section {
   border-radius: 30%;
   background: var(--isabelline);
   box-shadow: 0 0 50px -20px var(--erieblack);
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px -10px var(--erieblack);
+  transition: all 0.3s ease;
+}
+.prendas .card img {
+  margin-top: 60px;
+  margin-left: 18px;
+  height: 270px;
+  width: 260px;
+  border-radius: 25px;
+}
+.card h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 70px;
+  font-size: 2em;
+  font-family: "IM Fell English SC", serif;
+  color: var(--isabelline);
 }
 
 .profile-img img {
@@ -137,6 +253,7 @@ a{
 }
 
 
+
 footer {
   display: flex;
   justify-content: center;
@@ -145,4 +262,448 @@ footer {
   background: var(--lasuli);
   color: var(--isabelline);
   border-radius: 30px 30px 0 0;
+}
+/* pop up */
+.upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+.upload-box {
+  width: 60%;
+  background: var(--erieblack);
+  border-radius: 20px;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.upload-box:hover {
+  transform: translateY(-5px);
+}
+.upload-desc p {
+  color: var(--isabelline);
+  font-family: "IM Fell English SC", serif;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.upload-input {
+  display: none;
+}
+.upload-label {
+  display: inline-block;
+  background-color: var(--red);
+  color: var(--isabelline);
+  padding: 1em 2em;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.upload-label:hover {
+  background-color: var(--gray);
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+.modal:target {
+  display: flex;
+}
+.upload-modal-content {
+  position: relative;
+  background: var(--isabelline);
+  border-radius: 20px;
+  width: 50%;
+  max-width: 600px;
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "IM Fell English SC", serif;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+.upload-area {
+  margin-top: 4em;
+}
+.upload-instructions {
+  padding-top: 4em;
+}
+.close-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.upload-icon {
+  position: absolute;
+  top: 0em;
+  left: 0em;
+}
+.upload-icon img {
+  width: 120px;
+  height: auto;
+}
+.upload-instructions p {
+  color: var(--erieblack);
+  font-family: "IM Fell English SC", serif;
+  margin-bottom: 1em;
+}
+.upload-button {
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 1em 2em;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+.upload-button:hover {
+  background-color: var(--gray);
+}
+.upload-input {
+  display: none;
+}
+.upload-area {
+  border: 2px dashed #ccc; /* Recuadro punteado */
+  border-radius: 20px;
+  padding: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: #f8f8f8; /* Color de fondo claro para destacar el área */
+  min-height: 200px; /* Asegura que el área es suficientemente grande para soltar archivos */
+}
+.upload-button {
+  position: absolute;
+  bottom: 80px; /* Ajusta este valor según sea necesario */
+  left: 50%; /* Centra el botón horizontalmente relativo a su contenedor padre */
+  transform: translateX(-50%); /* Asegura que esté perfectamente centrado */
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 1em 2em;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  z-index: 10; /* Asegúrate de que el botón esté sobre otros elementos si es necesario */
+}
+/* ESTILOS DE Modal para los detalles de la prenda subida */
+/* Centro el título */
+.details-modal-content h2 {
+  text-align: center; /* Alineación al centro del título */
+  font-family: "IM Fell English SC", serif;
+  font-size: 2em;
+  color: black;
+}
+.details-modal-content {
+  background: var(--isabelline);
+  width: 700px;
+  border-radius: 25px;
+}
+/* Configuración de contenedor principal para flexbox */
+.form-field {
+  display: flex; /* Usa flexbox para crear un diseño de columnas */
+  margin: 0.5em 0;
+  align-items: flex-start; /* Alinea los elementos al inicio de la cruzada */
+  background: var(--isabelline);
+  justify-content: space-around;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.65em; /* Increased padding for description */
+  margin-top: 2em; /* Increased margin for separation */
+  border-radius: 10px;
+  border: 1px solid #D9D9D9;
+  font-family: "IM Fell English SC", serif;
+  background-color: #D9D9D9; /* New background color */
+  color: black; /* New text color */
+}
+#descripcion {
+  padding: 1em; /* Thicker input */
+}
+/* Configuración de columna para imagen y detalles */
+.imagen-form,
+.form-detalles {
+  flex: none; /* Se desactiva flex para que no tomen un espacio igual */
+  margin: 0.5em; /* Espacio entre las columnas */
+  width: 300px; /* Ancho fijo para las columnas */
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Alineación central para los elementos internos */
+  border-radius: 25px;
+}
+.form-detalles {
+  background: var(--isabelline);
+  background: #F5F0EE;
+}
+/* Configuración para la imagen dentro de .imagen-form */
+.imagen-form img {
+  max-width: 90%; /* La imagen no sobrepasará su contenedor */
+  max-height: 90%; /* La imagen no sobrepasará el alto del contenedor */
+  object-fit: contain; /* La imagen se ajustará dentro del contenedor manteniendo su aspecto */
+  padding: 25px; /* Padding para que la imagen no toque los bordes */
+  border-radius: 35px; /* Bordes redondeados para la imagen */
+}
+/* Establece un tamaño fijo para el contenedor de la imagen, independiente del contenido */
+.imagen-form {
+  height: 350px; /* Alto fijo para el contenedor de la imagen */
+  width: 300px; /* Ancho fijo para el contenedor de la imagen */
+}
+/* Configuración de los botones al final del modal */
+.form-buttons {
+  display: flex;
+  justify-content: center; /* Esto centrará los botones en el contenedor */
+  align-items: center; /* Esto alineará los botones verticalmente */
+  padding: 0.45em; /* Añade algo de espacio alrededor de los botones */
+}
+/* Estilos base para los botones */
+/* Estilos para el botón de cancelar reutilizando la clase para consistencia visual */
+/* Estilos para el contenedor de los botones */
+.form-buttons {
+  display: flex;
+  justify-content: center;  /* Centra los botones horizontalmente */
+  align-items: center;  /* Alinea los botones verticalmente */
+  gap: 20px;  /* Espacio entre los botones */
+  padding: 1em 0;  /* Espacio arriba y abajo dentro del contenedor */
+}
+/* Estilos específicos para cada botón */
+.cancel-button, .submit-button {
+  display: inline-block;
+  z-index: 10;
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 0.75em 1.5em;  /* Reducción del padding para hacer el botón más pequeño */
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+/* Añadimos hover para ambos botones */
+.cancel-button:hover, .submit-button:hover {
+  background-color: var(--gray);  /* Cambio de color al hacer hover */
+}
+/* REGISTRO EXITOSO */
+/* Aplica el mismo fondo y color de texto que los inputs */
+#confirmation-modal .details-modal-content {
+  background: var(--isabelline);
+  color: black;
+  font-family: "IM Fell English SC", serif;
+  text-align: center; /* Centra el texto del título y el párrafo */
+}
+/* Se reutilizan estilos para los botones del modal de detalles */
+
+#confirmation-modal .form-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+#confirmation-modal .close-button2 {
+  padding: 0.75em 1.5em;
+  border-radius: 20px;
+  margin: 0 0.5em;
+  font-size: 1em;
+  background-color: var(--red); /* Utiliza variable CSS para el color */
+  color: var(--isabelline);
+  font-family: "IM Fell English SC", serif;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#confirmation-modal .close-button2:hover {
+  background-color: var(--gray); /* Color al pasar el cursor */
+}
+.form-buttons2 {
+  width: 100%; /* Esto permite que el botón se centre en el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente en su contenedor */
+  padding-bottom: 1em; /* Esto agrega algo de espacio en la parte inferior si es necesario */
+}
+.close-button2 {
+  /* Tus otros estilos... */
+  margin-bottom: 0; /* Asegúrate de que no haya margen extra empujando el botón hacia arriba */
+}
+.checkmark-circle {
+  width: 100px;  /* Tamaño del círculo */
+  height: 100px;  /* Tamaño del círculo */
+  background-color: #4CAF50;  /* Color del círculo */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+.checkmark {
+  width: 12px;
+  height: 40px;
+  border-radius: 2px;
+  position: relative;
+  left: 50%; /* Centro el elemento en la mitad del círculo horizontalmente */
+  top: 50%; /* Centro el elemento en la mitad del círculo verticalmente */
+  transform: translate(-220%, -150%) rotate(45deg); /* Ajusta la posición correctamente */
+}
+.checkmark:before {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 12px;
+  height: 25px;
+  left: 0;
+  top: 15px;  /* Ajusta para que la intersección sea en el punto correcto */
+  animation: checkmark-expand-vertical 0.2s ease forwards;  /* Animación vertical primero */
+}
+.checkmark:after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  width: 25px;
+  height: 12px;
+  left: -13px;  /* Ajusta para que se extienda hacia la izquierda desde la intersección */
+  top: 55px;  /* Posición vertical para que alinee con el vertical */
+  animation: checkmark-expand-horizontal 0.2s ease forwards 0.2s;  /* Espera la finalización de la primera animación */
+}
+/* Popup para editar perfil */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-modal-content {
+  position: relative;
+  background: var(--isabelline);
+  border-radius: 20px;
+  width: 60%; /* Cambia este valor para ajustar el ancho */
+  max-width: 800px; /* Establece un ancho máximo (opcional) */
+  height: 550px; /* Cambia este valor para ajustar la altura */
+  max-height: 650px; /* Establece una altura máxima (opcional) */
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "IM Fell English SC", serif;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.edit-modal-content .form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.edit-modal-content .form-field label {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+.edit-modal-content .form-field input {
+  padding: 0.5em;
+  border-radius: 10px;
+  font-size: 1em;
+  border: 1px solid #D9D9D9;
+  font-family: "IM Fell English SC", serif;
+  background-color: #D9D9D9;
+  color: black;
+}
+
+.edit-modal-content .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+.edit-modal-content .form-buttons button {
+  padding: 1em 2em; /* Aumentamos el padding vertical y horizontal */
+  border-radius: 25px; /* Aumentamos ligeramente el radio de los bordes */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1em; /* Aumentamos el tamaño de fuente */
+}
+
+.edit-modal-content .form-buttons .cancel-button {
+  background-color: var(--red);
+  color: var(--isabelline);
+}
+
+.edit-modal-content .form-buttons .cancel-button:hover {
+  background-color: var(--gray);
+}
+
+.edit-modal-content .form-buttons .submit-button {
+  background-color: var(--lasuli);
+  color: var(--isabelline);
+}
+
+.edit-modal-content .form-buttons .submit-button:hover {
+  background-color: var(--erieblack);
+}
+.form-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los campos se envuelvan en varias líneas */
+  justify-content: space-between; /* Distribuye los campos en dos columnas */
+}
+
+.form-field {
+  flex-basis: 48%; /* Cada campo ocupa aproximadamente la mitad del ancho */
+}
+.form-field {
+  margin-bottom: 20px; /* Espacio entre los campos */
+}
+
+.form-field label {
+  display: block; /* Muestra las etiquetas en una línea separada */
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el input */
+}
+
+.form-field input {
+  width: 100%; /* Los inputs ocupan todo el ancho disponible */
+  padding: 8px; /* Ajusta el relleno interno de los inputs */
+  box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+}
+@keyframes checkmark-expand-vertical {
+  0% {
+    height: 0;  /* Inicia sin altura */
+    opacity: 0;
+  }
+  100% {
+    height: 45px;  /* Expande a la altura completa */
+    opacity: 1;
+  }
+}
+@keyframes checkmark-expand-horizontal {
+  0% {
+    width: 0;  /* Inicia sin ancho */
+    opacity: 0;
+  }
+  100% {
+    width: 25px;  /* Expande al ancho completo */
+    opacity: 1;
+  }
 }
