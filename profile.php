@@ -19,7 +19,7 @@ if (!isset($_SESSION['usuario'])) {
       rel="stylesheet"/>
     <link rel="stylesheet" href="./css/profile.css">
     <?php
-      require_once 'php/conexionbd.php';
+      require_once './php/conexionbd.php';
       // query para obtener los datos del usuario
       $usr = $_SESSION['usuario'];
       $sql = "SELECT * FROM usuario WHERE correo = '$usr'";
@@ -45,52 +45,59 @@ if (!isset($_SESSION['usuario'])) {
         <h2>Stay Cool</h2>
     </header>
     <div class="perfil">
-        <div class="foto">
-            <img src="img/user_black.png" alt="Profile" />
-            
-        </div>
         <div class="datos">
-            <label for="email">Email: <?php 
-              // select email from usuario where id = $_SESSION['usuario']
-              echo $usuario['correo'];          
-            ?> </label>
-            <label for="edad">Edad:
-            <?php 
-              echo $usuario['edad'];
-            ?> </label>
+          
+            <div class="foto">
+                <img src="img/user_black.png" alt="Profile" />
+            </div>
+            <div class="info">
+              <label for="email">Email: <?php 
+                echo $usuario['correo'];          
+              ?> </label>
+
+              <label for="edad">Edad:
+              <?php 
+                echo $usuario['edad'];
+              ?> </label>
+              
+              <label for="nombre">Nombre:
+                <?php 
+                  echo $usuario['nombre'];
+                ?>
+              </label>
+              
+              <label for="pais">Pais:
+                <?php 
+                  echo $usuario['pais'];
+                ?>
+              </label>
+              
+              <label for="estado">Estado:
+                <?php 
+                  echo $usuario['estado'];
+                ?>
+              </label>
+              
+              <label for="localidad">Localidad: 
+                <?php 
+                  echo $usuario['localidad'];
+                ?>
+              </label>
+            </div>
         </div>
-        <div class="datos">
-            <label for="nombre">Nombre:
-              <?php 
-                echo $usuario['nombre'];
-              ?>
-               </label>
-            <label for="pais">Pais:
-              <?php 
-                echo $usuario['pais'];
-              ?>
-            </label>
-            <label for="estado">Estado:
-              <?php 
-                echo $usuario['estado'];
-              ?>
-            </label>
+        
+        <div class="edit-info">
+          <button id="editar">Editar informacion</button>
         </div>
-        <div class="datos">
-            <label for="localidad">Localidad: 
-              <?php 
-                echo $usuario['localidad'];
-              ?>
-            </label>
-        </div>
-    </div>
-    <button id="editar">Editar informacion</button>
-    <hr>
+      </div>
+
+    
     <div class="botones">
       <button id="delete"></a></button>
       <h2>Prendas agregadas</h2>
       <a href="#popup-upload"><button id="add"></button></a>
     </div>
+
     <div class="prendas">
         <div class="card">
           <img src="./img/Hodie.jpg" alt="imagen" />

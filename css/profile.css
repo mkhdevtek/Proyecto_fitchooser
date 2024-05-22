@@ -2,7 +2,7 @@
   --lasuli: #416788;
   --erieblack: #1e1e1e;
   --erieblack_alpha: rgba(30, 30, 30, 0.544);
-  --isabelline: #F5F0EE;
+  --isabelline: #f5f0ee;
   --isabelline_alpha: #f5fdeea4;
   --red: #fd9696;
   --gray: rgba(217, 217, 217, 0.37);
@@ -82,32 +82,65 @@ header h2 {
 /* empieza la parte de datos del perfil*/
 .perfil {
   display: flex;
-  flex-direction: row;
-  margin-top: 50px;
-  margin-left: 162px;
-}
-.perfil img {
-  height: 150px;
-  width: 125px;
-}
-.datos {
-  margin-top: 32px;
-  display: flex;
   flex-direction: column;
-  margin-left: 150px;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  color: var(--erieblack);
+  margin: 40px 0;
+  /*padding: 20px; */
+  border-bottom: 2px solid var(--lasuli);
+}
+
+.datos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  color: var(--erieblack);
+  flex-wrap: wrap;
 }
 .foto {
-  margin-left: 60px;
   display: flex;
-  flex-direction: column;
-  background-color: var(--gray);
-  border-radius: 100px;
-  width: 200px;
-  height: 200px;
-  margin-left: 100px;
-  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  width: 180px;
+  border-radius: 100%;
+  background: var(--isabelline);
+  box-shadow: 0 0 50px -20px var(--erieblack);
+  margin: 10px 50px;
 }
-  
+
+.foto img {
+  width: auto;
+  height: 100%;
+  border-radius: 30%;
+  object-fit: cover;
+}
+
+.info {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-items: center; */
+  align-content: stretch;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 50%;
+  color: var(--erieblack);
+}
+
+label {
+  font-size: 1.5em;
+  margin: 20px;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -118,10 +151,16 @@ section {
   color: var(--erieblack);
 }
 
+.edit-info {
+  margin: 30px auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #editar {
   font-size: 1.2em;
-  margin: 40px;
-  margin-left: 43%;
   background-color: var(--red);
   color: black;
   border: none;
@@ -131,7 +170,7 @@ section {
 }
 #editar:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
@@ -141,7 +180,9 @@ label {
 }
 /* empieza sección de prendas agregadas */
 .botones {
-  margin: 30px;
+  width: 55%;
+  height: 70px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
@@ -157,7 +198,7 @@ label {
   background-color: var(--red);
   border: none;
   border-radius: 50px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
@@ -180,7 +221,7 @@ label {
 .profile {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly ;
+  justify-content: space-evenly;
   align-items: center;
   height: 100px;
   width: 100%;
@@ -213,17 +254,46 @@ label {
   box-shadow: 0 0 30px -10px var(--erieblack);
   transition: all 0.3s ease;
 }
-.prendas .card img {
-  margin-top: 60px;
-  margin-left: 18px;
-  height: 270px;
-  width: 260px;
-  border-radius: 25px;
+
+.prendas {
+  --height: 55vh;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 85%;
+  height: var(--height);
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.card {
+  --width: 22%;
+  --height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--erieblack);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 87%;
+  height: 80%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin: 0.9em 0 0 0;
+  transition: all 0.3s ease;
 }
 .card h3 {
   color: white;
   text-align: center;
-  margin-bottom: 70px;
+  margin: 10px auto;
   font-size: 2em;
   font-family: "IM Fell English SC", serif;
   color: var(--isabelline);
@@ -247,12 +317,10 @@ label {
   color: var(--erieblack);
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--erieblack);
 }
-
-
 
 footer {
   display: flex;
@@ -314,6 +382,7 @@ footer {
   backdrop-filter: blur(10px);
   align-items: center;
   justify-content: center;
+  color: var(--erieblack);
 }
 .modal:target {
   display: flex;
@@ -430,9 +499,9 @@ footer {
   padding: 0.65em; /* Increased padding for description */
   margin-top: 2em; /* Increased margin for separation */
   border-radius: 10px;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   font-family: "IM Fell English SC", serif;
-  background-color: #D9D9D9; /* New background color */
+  background-color: #d9d9d9; /* New background color */
   color: black; /* New text color */
 }
 #descripcion {
@@ -453,7 +522,7 @@ footer {
 }
 .form-detalles {
   background: var(--isabelline);
-  background: #F5F0EE;
+  background: #f5f0ee;
 }
 /* Configuración para la imagen dentro de .imagen-form */
 .imagen-form img {
@@ -480,19 +549,20 @@ footer {
 /* Estilos para el contenedor de los botones */
 .form-buttons {
   display: flex;
-  justify-content: center;  /* Centra los botones horizontalmente */
-  align-items: center;  /* Alinea los botones verticalmente */
-  gap: 20px;  /* Espacio entre los botones */
-  padding: 1em 0;  /* Espacio arriba y abajo dentro del contenedor */
+  justify-content: center; /* Centra los botones horizontalmente */
+  align-items: center; /* Alinea los botones verticalmente */
+  gap: 20px; /* Espacio entre los botones */
+  padding: 1em 0; /* Espacio arriba y abajo dentro del contenedor */
 }
 /* Estilos específicos para cada botón */
-.cancel-button, .submit-button {
+.cancel-button,
+.submit-button {
   display: inline-block;
   z-index: 10;
   background-color: var(--red);
   color: var(--isabelline);
   border: none;
-  padding: 0.75em 1.5em;  /* Reducción del padding para hacer el botón más pequeño */
+  padding: 0.75em 1.5em; /* Reducción del padding para hacer el botón más pequeño */
   font-family: "IM Fell English SC", serif;
   font-size: 1em;
   cursor: pointer;
@@ -500,8 +570,9 @@ footer {
   transition: background-color 0.3s ease;
 }
 /* Añadimos hover para ambos botones */
-.cancel-button:hover, .submit-button:hover {
-  background-color: var(--gray);  /* Cambio de color al hacer hover */
+.cancel-button:hover,
+.submit-button:hover {
+  background-color: var(--gray); /* Cambio de color al hacer hover */
 }
 /* REGISTRO EXITOSO */
 /* Aplica el mismo fondo y color de texto que los inputs */
@@ -544,9 +615,9 @@ footer {
   margin-bottom: 0; /* Asegúrate de que no haya margen extra empujando el botón hacia arriba */
 }
 .checkmark-circle {
-  width: 100px;  /* Tamaño del círculo */
-  height: 100px;  /* Tamaño del círculo */
-  background-color: #4CAF50;  /* Color del círculo */
+  width: 100px; /* Tamaño del círculo */
+  height: 100px; /* Tamaño del círculo */
+  background-color: #4caf50; /* Color del círculo */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -563,24 +634,24 @@ footer {
   transform: translate(-220%, -150%) rotate(45deg); /* Ajusta la posición correctamente */
 }
 .checkmark:before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: white;
   width: 12px;
   height: 25px;
   left: 0;
-  top: 15px;  /* Ajusta para que la intersección sea en el punto correcto */
-  animation: checkmark-expand-vertical 0.2s ease forwards;  /* Animación vertical primero */
+  top: 15px; /* Ajusta para que la intersección sea en el punto correcto */
+  animation: checkmark-expand-vertical 0.2s ease forwards; /* Animación vertical primero */
 }
 .checkmark:after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: white;
   width: 25px;
   height: 12px;
-  left: -13px;  /* Ajusta para que se extienda hacia la izquierda desde la intersección */
-  top: 55px;  /* Posición vertical para que alinee con el vertical */
-  animation: checkmark-expand-horizontal 0.2s ease forwards 0.2s;  /* Espera la finalización de la primera animación */
+  left: -13px; /* Ajusta para que se extienda hacia la izquierda desde la intersección */
+  top: 55px; /* Posición vertical para que alinee con el vertical */
+  animation: checkmark-expand-horizontal 0.2s ease forwards 0.2s; /* Espera la finalización de la primera animación */
 }
 /* Popup para editar perfil */
 .modal {
@@ -626,9 +697,9 @@ footer {
   padding: 0.5em;
   border-radius: 10px;
   font-size: 1em;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   font-family: "IM Fell English SC", serif;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   color: black;
 }
 
@@ -689,21 +760,21 @@ footer {
 }
 @keyframes checkmark-expand-vertical {
   0% {
-    height: 0;  /* Inicia sin altura */
+    height: 0; /* Inicia sin altura */
     opacity: 0;
   }
   100% {
-    height: 45px;  /* Expande a la altura completa */
+    height: 45px; /* Expande a la altura completa */
     opacity: 1;
   }
 }
 @keyframes checkmark-expand-horizontal {
   0% {
-    width: 0;  /* Inicia sin ancho */
+    width: 0; /* Inicia sin ancho */
     opacity: 0;
   }
   100% {
-    width: 25px;  /* Expande al ancho completo */
+    width: 25px; /* Expande al ancho completo */
     opacity: 1;
   }
 }
