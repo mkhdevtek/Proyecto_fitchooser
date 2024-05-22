@@ -782,3 +782,19 @@ footer {
     opacity: 1;
   }
 }
+.form-detalles input,
+.form-detalles select {
+  width: 90%; /* Controla el ancho del campo */
+  padding: 0.8em; /* Añade un relleno para hacer más fácil la escritura */
+  margin-top: 1em; /* Espacio entre los campos */
+  border: none; /* Remueve el borde predeterminado */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: var(--isabelline); /* Color de fondo claro */
+  color: var(--erieblack); /* Color del texto */
+  font-family: 'IM Fell English SC', serif; /* Tipo de letra del tema */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra ligera para profundidad */
+}
+
+.form-detalles select {
+  cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+}

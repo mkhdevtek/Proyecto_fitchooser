@@ -145,8 +145,35 @@ if (!isset($_SESSION['usuario'])) {
           <div class="form-detalles">
           <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
             <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
-          <input type="text" id="temporada" name="temporada" placeholder="Temporada">
-          <input type="text" id="color" name="color" placeholder="Color">
+              <!-- Menú desplegable para temporada -->
+              <select id="temporada" name="temporada">
+                  <option value="1">Hoddie</option>
+                  <option value="2">Camisa</option>
+                  <option value="3">Pantalon</option>
+                  <option value="4">Gorra</option>
+              </select>
+              <!-- Menú desplegable para categoría -->
+              <select id="categoria" name="categoria">
+                  <option value="1">Casual</option>
+                  <option value="2">Formal</option>
+                  <option value="3">Deportiva</option>
+                  <option value="4">Business casual</option>
+              </select>
+              <!-- Menú desplegable para colores -->
+              <select id="color" name="color">
+                  <option value="azul_marino">Azul marino</option>
+                  <option value="gris">Gris</option>
+                  <option value="negro">Negro</option>
+                  <option value="beige">Beige</option>
+                  <option value="caqui">Caqui</option>
+                  <option value="blanco">Blanco</option>
+                  <option value="azul_celeste">Azul celeste</option>
+                  <option value="verde_oliva">Verde oliva</option>
+                  <option value="burdeos">Burdeos</option>
+                  <option value="marron">Marrón</option>
+                  <option value="rojo">Rojo</option>
+                  <option value="morado">Morado</option>
+              </select>
           </div>
         </div>
         <div class="form-buttons">
@@ -216,5 +243,6 @@ if (!isset($_SESSION['usuario'])) {
     </footer>
     <script src="./js/script-profile.js"></script>
     <script src="./js/script-editar.js"></script>
+    <script src="./js/scriptPRO.js"></script>
 </body>
 </html>
