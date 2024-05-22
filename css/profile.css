@@ -7,12 +7,20 @@
   --red: #fd9696;
   --gray: rgba(217, 217, 217, 0.37);
 }
+
 html {
-  background-color: var(--isabelline);
+  background: var(--isabelline);
+  color: var(--isabelline);
 }
+
 body {
+  font-family: "Roboto", sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--isabelline);
 }
+
 header {
   display: flex;
   flex-direction: column;
@@ -25,6 +33,7 @@ header {
   border-radius: 0 0 30px 30px;
   height: 20vh;
 }
+
 .logo {
   display: flex;
   flex-direction: row;
@@ -35,10 +44,12 @@ header {
   height: 95%;
   transition: all 0.3s ease;
 }
+
 .logo:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+
 .logo img {
   --width: 20%;
   --height: 80%;
@@ -48,6 +59,7 @@ header {
   object-fit: cover;
   padding: 0 10px;
 }
+
 .logo h1 {
   font-family: "Imperial Script", cursive;
   font-weight: 500;
@@ -58,6 +70,7 @@ header {
   margin-top: 30px;
   padding: 0 30px;
 }
+
 header h2 {
   font-size: 1.5em;
   font-family: "IM Fell English SC", serif;
@@ -65,6 +78,7 @@ header h2 {
   font-style: normal;
   margin-top: -55px;
 }
+
 /* empieza la parte de datos del perfil*/
 .perfil {
   display: flex;
@@ -92,9 +106,18 @@ header h2 {
   height: 200px;
   margin-left: 100px;
   display: grid;
+}
+  
+section {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: auto;
+  width: 100%;
+  color: var(--erieblack);
 }
+
 #editar {
   font-size: 1.2em;
   margin: 40px;
@@ -153,22 +176,38 @@ label {
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-.prendas {
+
+.profile {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly ;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  color: var(--erieblack);
+  margin: 20px auto;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--lasuli);
 }
+
 .card {
   margin-top: 50px;
   width: 300px;
   height: 400px;
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 50px;
-  justify-content: center;
-  border-radius: 25px;
 }
+
+.profile-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 30%;
+  background: var(--isabelline);
+  box-shadow: 0 0 50px -20px var(--erieblack);
+}
+
 .card:hover {
   transform: scale(1.03);
   box-shadow: 0 0 30px -10px var(--erieblack);
@@ -189,6 +228,32 @@ label {
   font-family: "IM Fell English SC", serif;
   color: var(--isabelline);
 }
+
+.profile-img img {
+  width: auto;
+  height: 100%;
+  border-radius: 30%;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 50%;
+  color: var(--erieblack);
+}
+
+a{
+  text-decoration: none;
+  color: var(--erieblack);
+}
+
+
+
 footer {
   display: flex;
   justify-content: center;

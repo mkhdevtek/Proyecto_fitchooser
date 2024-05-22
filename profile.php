@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if (!isset($_SESSION['usuario'])) {
     header("Location: ./index.html");
@@ -17,6 +18,21 @@ if (!isset($_SESSION['usuario'])) {
       href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Imperial+Script&display=swap"
       rel="stylesheet"/>
     <link rel="stylesheet" href="./css/profile.css">
+    <?php
+      require_once 'php/conexionbd.php';
+      // query para obtener los datos del usuario
+      $usr = $_SESSION['usuario'];
+      $sql = "SELECT * FROM usuario WHERE correo = '$usr'";
+      $result = $conn->query($sql);
+
+      if($result->num_rows > 0){
+        $usuario = $result->fetch_assoc();
+      }else{
+        $usuario = [];
+      }
+
+    ?>
+
 </head>
 <body>
     <header>
@@ -31,19 +47,41 @@ if (!isset($_SESSION['usuario'])) {
     <div class="perfil">
         <div class="foto">
             <img src="img/user_black.png" alt="Profile" />
+            
         </div>
         <div class="datos">
-            <label for="email">Email: </label>
-            <label for="edad">Edad:</label>
-            <label for="telefono">Telefono:</label>
+            <label for="email">Email: <?php 
+              // select email from usuario where id = $_SESSION['usuario']
+              echo $usuario['correo'];          
+            ?> </label>
+            <label for="edad">Edad:
+            <?php 
+              echo $usuario['edad'];
+            ?> </label>
         </div>
         <div class="datos">
-            <label for="nombre">Nombre: </label>
-            <label for="pais">Pais:</label>
-            <label for="estado">Estado:</label>
+            <label for="nombre">Nombre:
+              <?php 
+                echo $usuario['nombre'];
+              ?>
+               </label>
+            <label for="pais">Pais:
+              <?php 
+                echo $usuario['pais'];
+              ?>
+            </label>
+            <label for="estado">Estado:
+              <?php 
+                echo $usuario['estado'];
+              ?>
+            </label>
         </div>
         <div class="datos">
-            <label for="localidad">Localidad: </label>
+            <label for="localidad">Localidad: 
+              <?php 
+                echo $usuario['localidad'];
+              ?>
+            </label>
         </div>
     </div>
     <button id="editar">Editar informacion</button>
@@ -55,19 +93,19 @@ if (!isset($_SESSION['usuario'])) {
     </div>
     <div class="prendas">
         <div class="card">
-          <img src="img/Hodie.jpg" alt="imagen" />
+          <img src="./img/Hodie.jpg" alt="imagen" />
           <h3>Hoddie</h3>
         </div>
         <div class="card">
-          <img src="img/tshirt.jpg" alt="imagen" />
+          <img src="./img/tshirt.jpg" alt="imagen" />
           <h3>Camiseta</h3>
         </div>
         <div class="card">
-          <img src="img/Jeans.jpg" alt="imagen" />
+          <img src="./img/Jeans.jpg" alt="imagen" />
           <h3>Pantalon</h3>
         </div>
         <div class="card">
-          <img src="img/gorra.jpg" alt="imagen" />
+          <img src="./img/gorra.jpg" alt="imagen" />
           <h3>Gorra</h3>
         </div>
     </div>
