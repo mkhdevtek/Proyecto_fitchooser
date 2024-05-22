@@ -9,7 +9,7 @@ $database = "fitchooser"; // Nombre de la base de datos
  try {
      $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     echo "Conexión PDO exitosa.";
+    //  echo "Conexión PDO exitosa.";
  } catch (PDOException $e) {
     die("Error de conexión PDO: " . $e->getMessage());
  }
@@ -21,6 +21,6 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
    die("Error en la conexión MySQLi: " . $conn->connect_error);
 } else {
-    echo "Conexión MySQLi exitosa.";
+    // echo "Conexión MySQLi exitosa.";
 }
 ?>
