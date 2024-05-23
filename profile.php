@@ -5,6 +5,31 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: ./index.html");
     exit();
 }
+// Consulta para obtener los datos del usuario usando consultas preparadas
+$usr = $_SESSION['usuario'];
+$stmt = $conn->prepare("SELECT * FROM usuario WHERE correo = ?");
+$stmt->bind_param("s", $usr);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $usuario = $result->fetch_assoc();
+} else {
+    $usuario = [];
+}
+$stmt->close();
+
+// Consulta para obtener las prendas del usuario
+$prendas_stmt = $conn->prepare("SELECT * FROM ropa WHERE id_usuario = ?");
+$prendas_stmt->bind_param("i", $usuario['id']);
+$prendas_stmt->execute();
+$prendas_result = $prendas_stmt->get_result();
+
+$prendas = [];
+while ($row = $prendas_result->fetch_assoc()) {
+    $prendas[] = $row;
+}
+$prendas_stmt->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,24 +121,20 @@ if (!isset($_SESSION['usuario'])) {
       <h2>Prendas agregadas</h2>
       <a href="#popup-upload"><button id="add"></button></a>
     </div>
-
     <div class="prendas">
-        <div class="card">
-          <img src="./img/Hodie.jpg" alt="imagen" />
-          <h3>Hoddie</h3>
-        </div>
-        <div class="card">
-          <img src="./img/tshirt.jpg" alt="imagen" />
-          <h3>Camiseta</h3>
-        </div>
-        <div class="card">
-          <img src="./img/Jeans.jpg" alt="imagen" />
-          <h3>Pantalon</h3>
-        </div>
-        <div class="card">
-          <img src="./img/gorra.jpg" alt="imagen" />
-          <h3>Gorra</h3>
-        </div>
+        <?php
+        $counter = 0;
+        foreach ($prendas as $prenda) {
+            if ($counter % 4 == 0 && $counter != 0) {
+                echo '</div><div class="prendas">'; // Cierra el div anterior y abre uno nuevo
+            }
+            echo '<div class="card">';
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($prenda['fotoropa']) . '" alt="imagen" />';
+            echo '<h3>' . htmlspecialchars($prenda['nombre']) . '</h3>';
+            echo '</div>';
+            $counter++;
+        }
+        ?>
     </div>
     <!-- Popup Upload Modal -->
     <div id="popup-upload" class="modal">
