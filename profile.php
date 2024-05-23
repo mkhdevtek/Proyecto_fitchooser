@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+include 'php/conexionbd.php';
 if (!isset($_SESSION['usuario'])) {
     header("Location: ./index.html");
     exit();
@@ -32,7 +32,6 @@ if (!isset($_SESSION['usuario'])) {
       }
 
     ?>
-
 </head>
 <body>
     <header>
@@ -200,35 +199,31 @@ if (!isset($_SESSION['usuario'])) {
       <div class="popup-inner edit-modal-content">
         <a href="#" class="close-button">X</a>
         <h2>Editar Perfil</h2>
-        <form id="edit-profile-form">
+          <form action="php/updateUsu.php" method="post">
           <div class="form-container">
             <div class="form-field">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-field">
               <label for="edad">Edad:</label>
-              <input type="number" id="edad" name="edad" required>
-            </div>
-            <div class="form-field">
-              <label for="telefono">Teléfono:</label>
-              <input type="tel" id="telefono" name="telefono" required>
+              <input type="number" id="edad" name="edad" value="<?= isset($usuario['edad']) ? $usuario['edad'] : '' ?>" required>
             </div>
             <div class="form-field">
               <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" name="nombre" required>
+              <input type="text" id="nombre" name="nombre" value="<?= isset($usuario['nombre']) ? $usuario['nombre'] : '' ?>" required>
             </div>
+              <div class="form-field">
+                  <label for="apellidos">Apellidos:</label>
+                  <input type="text" id="apellidos" name="apellidos" value="<?= isset($usuario['apellidos']) ? $usuario['apellidos'] : '' ?>" required>
+              </div>
             <div class="form-field">
               <label for="pais">País:</label>
-              <input type="text" id="pais" name="pais" required>
+              <input type="text" id="pais" name="pais" value="<?= isset($usuario['pais']) ? $usuario['pais'] : '' ?>" required>
             </div>
             <div class="form-field">
               <label for="estado">Estado:</label>
-              <input type="text" id="estado" name="estado" required>
+              <input type="text" id="estado" name="estado" value="<?= isset($usuario['estado']) ? $usuario['estado'] : '' ?>" required>
             </div>
             <div class="form-field">
               <label for="localidad">Localidad:</label>
-              <input type="text" id="localidad" name="localidad" required>
+              <input type="text" id="localidad" name="localidad" value="<?= isset($usuario['localidad']) ? $usuario['localidad'] : '' ?>" required>
             </div>
             <div class="form-buttons">
               <button type="button" class="cancel-button">Cancelar</button>
