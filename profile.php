@@ -1,10 +1,35 @@
 <?php
-
 session_start();
+include 'php/conexionbd.php';
 if (!isset($_SESSION['usuario'])) {
     header("Location: ./index.html");
     exit();
 }
+// Consulta para obtener los datos del usuario usando consultas preparadas
+$usr = $_SESSION['usuario'];
+$stmt = $conn->prepare("SELECT * FROM usuario WHERE correo = ?");
+$stmt->bind_param("s", $usr);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $usuario = $result->fetch_assoc();
+} else {
+    $usuario = [];
+}
+$stmt->close();
+
+// Consulta para obtener las prendas del usuario
+$prendas_stmt = $conn->prepare("SELECT * FROM ropa WHERE id_usuario = ?");
+$prendas_stmt->bind_param("i", $usuario['id']);
+$prendas_stmt->execute();
+$prendas_result = $prendas_stmt->get_result();
+
+$prendas = [];
+while ($row = $prendas_result->fetch_assoc()) {
+    $prendas[] = $row;
+}
+$prendas_stmt->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +57,6 @@ if (!isset($_SESSION['usuario'])) {
       }
 
     ?>
-
 </head>
 <body>
     <header>
@@ -97,24 +121,20 @@ if (!isset($_SESSION['usuario'])) {
       <h2>Prendas agregadas</h2>
       <a href="#popup-upload"><button id="add"></button></a>
     </div>
-
     <div class="prendas">
-        <div class="card">
-          <img src="./img/Hodie.jpg" alt="imagen" />
-          <h3>Hoddie</h3>
-        </div>
-        <div class="card">
-          <img src="./img/tshirt.jpg" alt="imagen" />
-          <h3>Camiseta</h3>
-        </div>
-        <div class="card">
-          <img src="./img/Jeans.jpg" alt="imagen" />
-          <h3>Pantalon</h3>
-        </div>
-        <div class="card">
-          <img src="./img/gorra.jpg" alt="imagen" />
-          <h3>Gorra</h3>
-        </div>
+        <?php
+        $counter = 0;
+        foreach ($prendas as $prenda) {
+            if ($counter % 4 == 0 && $counter != 0) {
+                echo '</div><div class="prendas">'; // Cierra el div anterior y abre uno nuevo
+            }
+            echo '<div class="card">';
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($prenda['fotoropa']) . '" alt="imagen" />';
+            echo '<h3>' . htmlspecialchars($prenda['nombre']) . '</h3>';
+            echo '</div>';
+            $counter++;
+        }
+        ?>
     </div>
     <!-- Popup Upload Modal -->
     <div id="popup-upload" class="modal">
@@ -145,8 +165,35 @@ if (!isset($_SESSION['usuario'])) {
           <div class="form-detalles">
           <input type="text" id="nombre" name="nombre" placeholder="Nombre de la prenda">
             <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion de la prenda">
-          <input type="text" id="temporada" name="temporada" placeholder="Temporada">
-          <input type="text" id="color" name="color" placeholder="Color">
+              <!-- Menú desplegable para temporada -->
+              <select id="temporada" name="temporada">
+                  <option value="1">Hoddie</option>
+                  <option value="2">Camisa</option>
+                  <option value="3">Pantalon</option>
+                  <option value="4">Gorra</option>
+              </select>
+              <!-- Menú desplegable para categoría -->
+              <select id="categoria" name="categoria">
+                  <option value="1">Casual</option>
+                  <option value="2">Formal</option>
+                  <option value="3">Deportiva</option>
+                  <option value="4">Business casual</option>
+              </select>
+              <!-- Menú desplegable para colores -->
+              <select id="color" name="color">
+                  <option value="azul_marino">Azul marino</option>
+                  <option value="gris">Gris</option>
+                  <option value="negro">Negro</option>
+                  <option value="beige">Beige</option>
+                  <option value="caqui">Caqui</option>
+                  <option value="blanco">Blanco</option>
+                  <option value="azul_celeste">Azul celeste</option>
+                  <option value="verde_oliva">Verde oliva</option>
+                  <option value="burdeos">Burdeos</option>
+                  <option value="marron">Marrón</option>
+                  <option value="rojo">Rojo</option>
+                  <option value="morado">Morado</option>
+              </select>
           </div>
         </div>
         <div class="form-buttons">
@@ -173,35 +220,31 @@ if (!isset($_SESSION['usuario'])) {
       <div class="popup-inner edit-modal-content">
         <a href="#" class="close-button">X</a>
         <h2>Editar Perfil</h2>
-        <form id="edit-profile-form">
+          <form action="php/updateUsu.php" method="post">
           <div class="form-container">
             <div class="form-field">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-field">
               <label for="edad">Edad:</label>
-              <input type="number" id="edad" name="edad" required>
-            </div>
-            <div class="form-field">
-              <label for="telefono">Teléfono:</label>
-              <input type="tel" id="telefono" name="telefono" required>
+              <input type="number" id="edad" name="edad" value="<?= isset($usuario['edad']) ? $usuario['edad'] : '' ?>" required>
             </div>
             <div class="form-field">
               <label for="nombre">Nombre:</label>
-              <input type="text" id="nombre" name="nombre" required>
+              <input type="text" id="nombre" name="nombre" value="<?= isset($usuario['nombre']) ? $usuario['nombre'] : '' ?>" required>
             </div>
+              <div class="form-field">
+                  <label for="apellidos">Apellidos:</label>
+                  <input type="text" id="apellidos" name="apellidos" value="<?= isset($usuario['apellidos']) ? $usuario['apellidos'] : '' ?>" required>
+              </div>
             <div class="form-field">
               <label for="pais">País:</label>
-              <input type="text" id="pais" name="pais" required>
+              <input type="text" id="pais" name="pais" value="<?= isset($usuario['pais']) ? $usuario['pais'] : '' ?>" required>
             </div>
             <div class="form-field">
               <label for="estado">Estado:</label>
-              <input type="text" id="estado" name="estado" required>
+              <input type="text" id="estado" name="estado" value="<?= isset($usuario['estado']) ? $usuario['estado'] : '' ?>" required>
             </div>
             <div class="form-field">
               <label for="localidad">Localidad:</label>
-              <input type="text" id="localidad" name="localidad" required>
+              <input type="text" id="localidad" name="localidad" value="<?= isset($usuario['localidad']) ? $usuario['localidad'] : '' ?>" required>
             </div>
             <div class="form-buttons">
               <button type="button" class="cancel-button">Cancelar</button>
@@ -216,5 +259,6 @@ if (!isset($_SESSION['usuario'])) {
     </footer>
     <script src="./js/script-profile.js"></script>
     <script src="./js/script-editar.js"></script>
+    <script src="./js/scriptPRO.js"></script>
 </body>
 </html>
