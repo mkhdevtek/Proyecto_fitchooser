@@ -106,6 +106,7 @@ header h2 {
 .foto {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 180px;
   width: 180px;
@@ -116,12 +117,29 @@ header h2 {
 }
 
 .foto img {
+  margin-top: 80px;
   width: auto;
   height: 100%;
   border-radius: 30%;
   object-fit: cover;
 }
-
+.foto #edit{
+  border: none;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  background-color: var(--red);
+  background-image: url("../img/lapiz.png");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.foto #edit:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
 .info {
   height: 100%;
   width: 50%;
@@ -797,4 +815,56 @@ footer {
 
 .form-detalles select {
   cursor: pointer; /* Cambia el cursor a una mano para indicar que es interactivo */
+}
+/* Estilos para el popup de cambiar foto de perfil */
+#change-photo-popup .popup-inner {
+  background: var(--isabelline);
+  border-radius: 20px;
+  width: 400px;
+  padding: 2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "IM Fell English SC", serif;
+}
+
+#change-photo-popup .form-field {
+  margin: 1em 0;
+}
+
+#change-photo-popup input[type="file"] {
+  font-family: "IM Fell English SC", serif;
+  padding: 0.5em;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  background-color: #d9d9d9;
+  color: var(--erieblack);
+}
+
+#change-photo-popup .form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#change-photo-popup .cancel-button3,
+#change-photo-popup .submit-button3 {
+  background-color: var(--red);
+  color: var(--isabelline);
+  border: none;
+  padding: 0.75em 1.5em;
+  font-family: "IM Fell English SC", serif;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+#change-photo-popup .cancel-button3:hover,
+#change-photo-popup .submit-button3:hover {
+  background-color: var(--gray);
+}
+.modal.show {
+  display: flex;
 }

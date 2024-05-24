@@ -39,3 +39,27 @@ editProfileForm.addEventListener('submit', function(event) {
   // Aquí puedes agregar el código para enviar los datos del formulario
   closeModal(); // Cerrar el modal después de enviar el formulario
 });
+
+
+//editar foto de perfil
+
+document.getElementById('edit').addEventListener('click', function() {
+  document.getElementById('change-photo-popup').style.display = 'flex';
+});
+
+// Función para manejar el cierre del popup
+document.querySelectorAll('#change-photo-popup .cancel-button3').forEach(function(button) {
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('change-photo-popup').style.display = 'none';
+  });
+});
+
+// Función para manejar la carga de la nueva foto de perfil
+document.querySelector('#change-photo-popup .submit-button3').addEventListener('click', function() {
+  var newPhoto = document.getElementById('new-photo').files[0];
+  // Aquí puedes agregar el código para enviar la nueva foto al servidor y actualizarla en la página
+  // ...
+
+  document.getElementById('change-photo-popup').style.display = 'none';
+});

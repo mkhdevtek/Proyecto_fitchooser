@@ -73,6 +73,7 @@ $prendas_stmt->close();
           
             <div class="foto">
                 <img src="img/user_black.png" alt="Profile" />
+                <a href="#change-photo-popup"><button id = "edit"></button></a>
             </div>
             <div class="info">
               <label for="email">Email: <?php 
@@ -135,6 +136,20 @@ $prendas_stmt->close();
             $counter++;
         }
         ?>
+    </div>
+    <!-- Popup para cambiar foto de perfil -->
+    <div id="change-photo-popup" class="modal">
+      <div class="popup-inner">
+        <a href="#" class="close-button">X</a>
+        <h2>Cambiar foto de perfil</h2>
+        <div class="form-field">
+          <input type="file" id="new-photo" name="new-photo" accept="image/*">
+        </div>
+        <div class="form-buttons">
+          <button class="cancel-button3">Cancelar</button>
+          <button class="submit-button3">Guardar cambios</button>
+        </div>
+      </div>
     </div>
     <!-- Popup Upload Modal -->
     <div id="popup-upload" class="modal">
@@ -206,7 +221,7 @@ $prendas_stmt->close();
     <div id="confirmation-modal" class="modal">
       <div class="popup-inner details-modal-content">
         <h2>Registro completado</h2>
-        <p>Tu prenda ha sido agregada con éxito.</p>
+        <p>ha sido agregada con éxito.</p>
         <div class="checkmark-circle">
           <div class="checkmark"></div>
         </div>
