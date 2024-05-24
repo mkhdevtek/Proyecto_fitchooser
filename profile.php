@@ -91,8 +91,8 @@ $stmt->close();
                     echo '<img src="data:image/jpeg;base64,' . base64_encode($usuario['fotousu']) . '" alt="Profile" />';
                 }
                 ?>
-                <a href="#change-photo-popup"><button id="edit"></button></a>
             </div>
+            <a href="#change-photo-popup"><button id="edit"></button></a>
             <div class="info">
               <label for="email">Email: <?php
                 echo $usuario['correo'];
