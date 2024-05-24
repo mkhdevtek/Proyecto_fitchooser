@@ -868,3 +868,51 @@ footer {
 .modal.show {
   display: flex;
 }
+/* Estilos adicionales para la sección de información del usuario */
+.info {
+  background-color: var(--erieblack_alpha); /* Fondo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+.info label {
+  color: var(--isabelline); /* Texto claro sobre fondo oscuro */
+  display: block; /* Cada etiqueta en su propia línea */
+  padding: 10px 0; /* Espacio arriba y abajo para separación */
+  font-size: 1.2em; /* Tamaño de fuente más grande para mejor lectura */
+  font-family: "IM Fell English SC", serif;
+}
+
+/* Estilos para el botón de editar información */
+#editar {
+  color: var(--isabelline); /* Contraste con el color de fondo */
+  font-weight: bold; /* Texto en negrita para mayor enfasis */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para profundidad */
+  transition: background-color 0.3s, transform 0.3s; /* Transición suave para hover */
+  font-family: "IM Fell English SC", serif;
+}
+
+/* Estilos para el título de prendas agregadas */
+.botones h2 {
+  font-family: "IM Fell English SC", serif;
+}
+/* Contenedor del perfil */
+.foto {
+  width: 170px; /* Tamaño del círculo */
+  height: 170px;
+  border-radius: 50%; /* Hace el contenedor completamente redondo */
+  overflow: hidden; /* Oculta cualquier cosa fuera del círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* Fondo blanco por si la imagen no cubre todo el espacio */
+  border: 3px solid #f3f3f3; /* Borde sutil para estilo */
+}
+
+/* Imagen dentro del contenedor */
+.foto img {
+  width: 100%; /* Asegura que la imagen cubra el ancho del contenedor */
+  height: 100%; /* Asegura que la imagen cubra la altura del contenedor */
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+}

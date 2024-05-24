@@ -30,6 +30,16 @@ while ($row = $prendas_result->fetch_assoc()) {
     $prendas[] = $row;
 }
 $prendas_stmt->close();
+$sql = "SELECT nombre, correo, edad, pais, estado, localidad, fotousu FROM usuario WHERE correo = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $correo_usuario);
+$stmt->execute();
+$result = $stmt->get_result();
+$usuario = $result->fetch_assoc();
+
+// Cierra el statement
+$stmt->close();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,18 +80,26 @@ $prendas_stmt->close();
     </header>
     <div class="perfil">
         <div class="datos">
-          
+
             <div class="foto">
-                <img src="img/user_black.png" alt="Profile" />
-                <a href="#change-photo-popup"><button id = "edit"></button></a>
+                <?php
+                if (empty($usuario['fotousu'])) {
+                    // No hay foto de perfil guardada, muestra imagen predeterminada
+                    echo '<img src="img/user_black.png" alt="Profile" />';
+                } else {
+                    // Hay foto de perfil, mostrarla
+                    echo '<img src="data:image/jpeg;base64,' . base64_encode($usuario['fotousu']) . '" alt="Profile" />';
+                }
+                ?>
+                <a href="#change-photo-popup"><button id="edit"></button></a>
             </div>
             <div class="info">
-              <label for="email">Email: <?php 
-                echo $usuario['correo'];          
+              <label for="email">Email: <?php
+                echo $usuario['correo'];
               ?> </label>
 
               <label for="edad">Edad:
-              <?php 
+              <?php
                 echo $usuario['edad'];
               ?> </label>
               
@@ -139,18 +157,21 @@ $prendas_stmt->close();
     </div>
     <!-- Popup para cambiar foto de perfil -->
     <div id="change-photo-popup" class="modal">
-      <div class="popup-inner">
-        <a href="#" class="close-button">X</a>
-        <h2>Cambiar foto de perfil</h2>
-        <div class="form-field">
-          <input type="file" id="new-photo" name="new-photo" accept="image/*">
+        <div class="popup-inner">
+            <a href="#" class="close-button">X</a>
+            <h2>Cambiar foto de perfil</h2>
+            <form method="POST" action="php/update_profile_photo.php" enctype="multipart/form-data">
+                <div class="form-field">
+                    <input type="file" id="new-photo" name="new-photo" accept="image/*">
+                </div>
+                <div class="form-buttons">
+                    <a href="profile.php" class="cancel-button3">Cancelar</a>
+                    <button type="submit" class="submit-button3">Guardar cambios</button>
+                </div>
+            </form>
         </div>
-        <div class="form-buttons">
-          <button class="cancel-button3">Cancelar</button>
-          <button class="submit-button3">Guardar cambios</button>
-        </div>
-      </div>
     </div>
+
     <!-- Popup Upload Modal -->
     <div id="popup-upload" class="modal">
       <div class="popup-inner upload-modal-content">
