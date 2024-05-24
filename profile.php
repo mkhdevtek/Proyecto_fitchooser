@@ -136,7 +136,7 @@ $stmt->close();
 
     
     <div class="botones">
-      <button id="delete"></a></button>
+        <!--<button id="delete"></a></button>-->
       <h2>Prendas agregadas</h2>
       <a href="#popup-upload"><button id="add"></button></a>
     </div>
