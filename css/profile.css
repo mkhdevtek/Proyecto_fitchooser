@@ -916,3 +916,43 @@ footer {
   height: 100%; /* Asegura que la imagen cubra la altura del contenedor */
   object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
 }
+.foto-container {
+  position: relative; /* Posicionamiento relativo para el contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit {
+  position: absolute; /* Posiciona el botón de manera absoluta */
+  bottom: 300px; /* Ajusta según sea necesario */
+  right: 1155px; /* Ajusta según sea necesario */
+  border: none;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  background-color: var(--red);
+  background-image: url("../img/lapiz.png");
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+#edit:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.foto {
+  width: 170px; /* Ajusta según sea necesario */
+  height: 170px; /* Ajusta según sea necesario */
+  border-radius: 50%; /* Hace el contenedor completamente redondo */
+  overflow: hidden; /* Oculta cualquier cosa fuera del círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; /* Fondo blanco por si la imagen no cubre todo el espacio */
+  border: 3px solid #f3f3f3; /* Borde sutil para estilo */
+}
