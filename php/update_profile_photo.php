@@ -35,7 +35,7 @@ $stmt->send_long_data(0, $fotousu); // Enviar el contenido binario del archivo
 
 // Ejecuta la consulta
 if ($stmt->execute()) {
-    echo "Foto de perfil actualizada correctamente.";
+    header("Location: ../profile.php");
 } else {
     echo "Error al actualizar la foto de perfil: " . $stmt->error;
 }
